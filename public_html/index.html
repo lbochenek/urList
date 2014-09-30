@@ -8,16 +8,15 @@
   
   <link rel="stylesheet" type="text/css" href="styles.css">
 
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
--->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
   
 <!--  <link href='http://fonts.googleapis.com/css?family=Exo+2:200' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'> 
--->
+      <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'> -->
 
 </head>
   
 <body>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   <h1>urList</h1>
@@ -25,12 +24,72 @@
   <p>this is a test paragraph!</p>
   <img src="img/urlogo.jpg" alt="logo">
   
-  
+=======
+  <h1>urList</h1>
 
+  <h2>Sign Up</h2>
+>>>>>>> FETCH_HEAD
   
-    <!-- Load jQuery -->
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!-- Load external scripts -->
+  <div class="form-wrapper">
+    <form id="form" name="form" onsubmit="" action="">
+      
+      <fieldset>
+        <label for "fname" id="label-text">First Name:</label>
+        <input id="fname" name="fname" type="text">
+        <br><br>
+          
+        <label for "lname" id="label-text">Last Name:</label>
+        <input id="lname" name="lname" type="text">
+        <br><br>
+
+        <label for "email" id="label-text">University Email:</label>
+        <input id="email" name="email" type="email"><br>
+          <span class="email email-error">Not a valid .edu email address</span>
+        <br><br>
+
+        <label for "studentid" id="label-text">Student ID#:</label>
+        <input id="studentid" name="studentid" type="number" placeholder="ex. 27542194"><br>
+          <span class="studentid id-error">Not a valid ID!</span>
+        <br><br>
+        
+        <label for "classyr" id="label-text">Class Year:</label>
+        <select id="classyr" name="classyr" type="number">
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+        </select>
+        <br><br>
+        
+        <label for "password" id="label-text">Password:</label>
+        <input id="password" name="password" type="password">
+        <br><br>
+        
+        <span style="font-style: italic;">* All Fields Required</span>
+        <br><br>  
+        
+         <button id="ButtonSubmit" onclick="enableSubmit();" type="button" >Send</button><br><br>
+          <!-- this button calls 'enableSubmit()' defined in 'scripts.js' -->
+          <span class="send-error">Please supply all required information</span>
+          <span class="send-success">Thanks!</span>
+     
+        </fieldset>
+    </form> <!-- end form -->
+  </div><!-- close .form-wrapper -->
+  
+  
+   
+  
+  
+  
+  
+  
+  
+  <!-- Load jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
+  <!-- Load external scripts -->
   <script src="scrips.js"></script>
+  
 </body>
 </html>

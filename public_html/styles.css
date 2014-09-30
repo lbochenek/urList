@@ -1,18 +1,129 @@
-body {
-  background-color: red;
+/* GENERAL STYLES ============================= */
+
+
+
+
+
+/* FORM STYLES ================================ */
+
+.email {
+    display: none;
+}
+.email-error {
+  color: red;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.green-border {
+  border: 2px solid green;
+}
+
+.red-border {
+  border: 2px solid red;
+}
+
+.email-success {
+  color: green;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.studentid {
+    display: none;
+}
+
+.id-error {
+  color: red;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.id-success {
+  color: green;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.send-error {
+  color: red;
+  margin-left: 1em;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.send-success {
+  color: green;
+  margin-left: 6.5em;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+fieldset {
+  border: 0;
+}
+
+#form {
+  background-color: white;
+  padding-top: 1em;
+  border-radius: 10px;
+  border: 1px solid black; 
+  font-family: 'Muli',sans-serif; 
+  max-width: 20em;
+  height: 40em;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#label-text { 
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+input {
+  clear: both;
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+
+select {
+  font-size: 18px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}/* source: http://css-tricks.com/snippets/css/turn-off-number-input-spinners/ 
+
+this removes the number wheel from student id input */
+
+#ButtonSubmit {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: 'Muli',sans-serif; 
+  color: #ffffff;
+  font-size: 18px;
+  background: #c1c1c1;
+  padding: 10px 50px 10px 50px;
+  margin-left: 4.4em;
+  text-decoration: none;
+  border: none;
+}
+
+#ButtonSubmit:hover {
+  background: #b9b9b9;
 }
 
 
-
-
-
-
-
-
-
-
-
-/* iPhone4 device styles */
+/* MOBILE DEVICE STYLES ======================= */
 
 @media only screen and (max-device-width: 480px) {
 
