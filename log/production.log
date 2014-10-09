@@ -1,0 +1,66 @@
+I, [2014-10-09T14:27:30.654428 #5743]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-10-09 14:27:30 -0400
+I, [2014-10-09T14:27:30.659728 #5743]  INFO -- : Processing by StaticPagesController#home as HTML
+I, [2014-10-09T14:27:30.668678 #5743]  INFO -- :   Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+I, [2014-10-09T14:27:30.670331 #5743]  INFO -- :   Rendered layouts/_shim.html.erb (0.2ms)
+E, [2014-10-09T14:27:30.673105 #5743] ERROR -- : SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1
+I, [2014-10-09T14:27:30.673712 #5743]  INFO -- :   Rendered layouts/_header.html.erb (2.9ms)
+I, [2014-10-09T14:27:30.673821 #5743]  INFO -- : Completed 500 Internal Server Error in 14ms
+F, [2014-10-09T14:27:30.675591 #5743] FATAL -- : 
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1):
+     5:       <ul>
+     6:         <li><%= link_to "Home",   root_path %></li>
+     7:         <li><%= link_to "Help",   help_path %></li>
+     8:         <% if logged_in? %>
+     9: <!--          <li><%= link_to "Users", '#' %></li> -->
+    10:           <li><%= link_to "Profile", current_user %></li>
+    11:           <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  app/helpers/sessions_helper.rb:7:in `current_user'
+  app/helpers/sessions_helper.rb:11:in `logged_in?'
+  app/views/layouts/_header.html.erb:8:in `_app_views_layouts__header_html_erb___1070750608242315323_70332040702560'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3115593824296225790_70332040641860'
+
+
+I, [2014-10-09T14:27:33.231406 #5743]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-10-09 14:27:33 -0400
+I, [2014-10-09T14:27:33.232197 #5743]  INFO -- : Processing by StaticPagesController#home as HTML
+I, [2014-10-09T14:27:33.233001 #5743]  INFO -- :   Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+I, [2014-10-09T14:27:33.233561 #5743]  INFO -- :   Rendered layouts/_shim.html.erb (0.0ms)
+E, [2014-10-09T14:27:33.234362 #5743] ERROR -- : SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1
+I, [2014-10-09T14:27:33.234912 #5743]  INFO -- :   Rendered layouts/_header.html.erb (1.2ms)
+I, [2014-10-09T14:27:33.234994 #5743]  INFO -- : Completed 500 Internal Server Error in 3ms
+F, [2014-10-09T14:27:33.236759 #5743] FATAL -- : 
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1):
+     5:       <ul>
+     6:         <li><%= link_to "Home",   root_path %></li>
+     7:         <li><%= link_to "Help",   help_path %></li>
+     8:         <% if logged_in? %>
+     9: <!--          <li><%= link_to "Users", '#' %></li> -->
+    10:           <li><%= link_to "Profile", current_user %></li>
+    11:           <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  app/helpers/sessions_helper.rb:7:in `current_user'
+  app/helpers/sessions_helper.rb:11:in `logged_in?'
+  app/views/layouts/_header.html.erb:8:in `_app_views_layouts__header_html_erb___1070750608242315323_70332040702560'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3115593824296225790_70332040641860'
+
+
+I, [2014-10-09T14:32:30.529000 #5755]  INFO -- : Started GET "/" for 127.0.0.1 at 2014-10-09 14:32:30 -0400
+I, [2014-10-09T14:32:30.534045 #5755]  INFO -- : Processing by StaticPagesController#home as HTML
+I, [2014-10-09T14:32:30.542040 #5755]  INFO -- :   Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+I, [2014-10-09T14:32:30.543748 #5755]  INFO -- :   Rendered layouts/_shim.html.erb (0.2ms)
+E, [2014-10-09T14:32:30.546471 #5755] ERROR -- : SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1
+I, [2014-10-09T14:32:30.547215 #5755]  INFO -- :   Rendered layouts/_header.html.erb (3.0ms)
+I, [2014-10-09T14:32:30.547326 #5755]  INFO -- : Completed 500 Internal Server Error in 13ms
+F, [2014-10-09T14:32:30.549346 #5755] FATAL -- : 
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL LIMIT 1):
+     5:       <ul>
+     6:         <li><%= link_to "Home",   root_path %></li>
+     7:         <li><%= link_to "Help",   help_path %></li>
+     8:         <% if logged_in? %>
+     9: <!--          <li><%= link_to "Users", '#' %></li> -->
+    10:           <li><%= link_to "Profile", current_user %></li>
+    11:           <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  app/helpers/sessions_helper.rb:7:in `current_user'
+  app/helpers/sessions_helper.rb:11:in `logged_in?'
+  app/views/layouts/_header.html.erb:8:in `_app_views_layouts__header_html_erb___893408046784898302_70263013698060'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__531606197571870221_70263013637360'
+
+
