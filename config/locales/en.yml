@@ -19,5 +19,31 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+#learned how to do this here: http://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        fName: "First Name"
+        lName: "Last Name"
+        email: "University of Rochester Student Email"
+        sID: "Student ID Number"
+        classYr: "Class Year"
+    errors:
+      models:
+        user:
+          attributes:
+            fName:
+              blank: "is required"
+            lName: 
+              blank: "is required"             
+            email:
+              blank: "is required"
+              invalid: "needs to end in rochester.edu or u.rochester.edu"
+            sID:
+              blank: "is required"
+            classYr:
+              blank: "is required"
+              invalid: "needs to be a valid current class year (2015, 2016, 2017, 2018)"
+            
+            
