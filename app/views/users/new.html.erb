@@ -1,33 +1,40 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<h1 class="page-head">Sign up</h1>
 
-<div>
-  <div>
+  <div id = "sign-up">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
       
-      <%= f.label :fName, "First Name" %>
+      <%= f.label :fName, "First Name", class: "field-text" %>
       <%= f.text_field :fName %>
-      
-      <%= f.label :lName, "Last Name" %>
+      <br>
+    
+      <%= f.label :lName, "Last Name", class: "field-text" %>
       <%= f.text_field :lName %>
-
-      <%= f.label :email, "Email" %>
+      <br>
+    
+      <%= f.label :email, "Email", class: "field-text" %>
       <%= f.text_field :email %>
-      
-      <%= f.label :sID, "Student ID" %>
+      <br>  
+    
+      <%= f.label :sID, "Student ID", class: "field-text" %>
       <%= f.text_field :sID %>
-      
-      <%= f.label :classYr, "Class Year" %>
+      <br>  
+    
+      <%= f.label :classYr, "Class Year", class: "field-text" %>
       <%= f.text_field :classYr %>
-
-      <%= f.label :password, "Password" %>
+      <br>
+    
+      <%= f.label :password, "Password", class: "field-text" %>
       <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <br>
+    
+      <%= f.label :password_confirmation, "Confirmation", class: "field-text" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Create my account" %>
+      <br>
+    
+      <%= f.submit "Create my account", class: "account-submit" %>
+
     <% end %>
   </div>
-</div>

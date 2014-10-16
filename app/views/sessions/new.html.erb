@@ -1,19 +1,20 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<h1 class="page-head">Log in</h1>
 
-<div>
-  <div>
+
+  <div id = "sign-up">
     <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label :email, "Email", class: "field-text" %>
       <%= f.text_field :email %>
-
-      <%= f.label :password %>
+      <br>
+    
+      <%= f.label :password, "Password", class: "field-text" %>
       <%= f.password_field :password %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <br>
+    
+      <%= f.submit "Log in", class: "account-submit" %>
     <% end %>
 
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
-</div>
