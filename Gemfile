@@ -57,9 +57,5 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-<<<<<<< HEAD
 ruby "2.1.3p242"
-=======
-ruby "2.1.2"
->>>>>>> FETCH_HEAD
 
