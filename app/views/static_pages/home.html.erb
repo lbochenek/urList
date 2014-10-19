@@ -1,5 +1,12 @@
 
   <h1 class="splash">urList</h1>
-  <div class="centered">
-  <%= link_to "Make an account today!", signup_path, class: "signup" %>
-  </div>
+  
+  <%if logged_out?%>
+    <div class="centered">
+      <%= link_to "Make an account today!", signup_path, class: "signup" %>
+    </div>
+  <%else%>
+    <p>
+      Welcome back!
+    </p>  
+  <%end%>
