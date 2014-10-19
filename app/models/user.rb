@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     VALID_CLASSYR_REGEX = /\A(2015||2016||2017||2018)\z/
     validates :classYr, presence: true, format: {with: VALID_CLASSYR_REGEX}
     has_secure_password
-    validates :password, length: {minimum: 6}
+    validates :password, length: {minimum: 6}, allow_blank: true
     
     def User.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -35,4 +35,5 @@ class User < ActiveRecord::Base
     def forget
         update_attribute(:remember_digest, nil)
     end
+  
 end
