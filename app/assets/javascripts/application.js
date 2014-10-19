@@ -1,4 +1,6 @@
-
+//= require jquery
+//= require jquery_ujs
+//= require_tree
 
 // start off by hiding success and error messages 
 $('.send-success').hide();
