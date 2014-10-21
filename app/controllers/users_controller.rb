@@ -64,7 +64,9 @@ class UsersController < ApplicationController
 
       def correct_user
         @user = User.find(params[:id])
-        flash[:danger] = "You do not have permission to access this page"
-        redirect_to(root_url) unless current_user?(@user)
+        unless current_user?(@user)
+          flash[:danger] = "You do not have permission to access this page"
+          redirect_to(root_url)
+        end
       end
 end
