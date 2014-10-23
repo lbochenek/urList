@@ -5,34 +5,49 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
       
+
       <%= f.label :fName, "First Name", class: "field-text" %>
       <%= f.text_field :fName %>
-      <br>
-    
+      
+			<span class="ur-fname">First name required</span>
+			
+			<br>
       <%= f.label :lName, "Last Name", class: "field-text" %>
       <%= f.text_field :lName %>
-      <br>
-    
+			
+			<span class="ur-lname">Last name required</span>
+			
+			<br>			
       <%= f.label :email, "Email", class: "field-text" %>
       <%= f.text_field :email %>
-      <br>  
-    
+      
+			<span class="ur-email">A valid University of Rochester email is required</span>
+			
+			<br>
       <%= f.label :sID, "Student ID", class: "field-text" %>
       <%= f.text_field :sID %>
-      <br>  
-    
+      
+			<span class="ur-id">A valid University of Rochester ID is required</span>
+			
+			<br>
       <%= f.label :classYr, "Class Year", class: "field-text" %>
       <%= f.text_field :classYr %>
-      <br>
-    
+			
+			<span class="ur-class">Current undergraduate status is required</span>
+			
+			<br>
       <%= f.label :password, "Password", class: "field-text" %>
       <%= f.password_field :password %>
-      <br>
-    
+		
+			<span class="ur-pass">Please enter a 6 character password</span>
+		
+			<br>
       <%= f.label :password_confirmation, "Confirmation", class: "field-text" %>
       <%= f.password_field :password_confirmation %>
-
-      <br>
+			
+			<span class="ur-conf">Password and confirmation do not match</span>
+			
+			<br><br>
     
       <%= f.submit "Create my account", class: "account-submit" %>
 

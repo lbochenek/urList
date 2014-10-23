@@ -1,36 +1,58 @@
 <% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<h1 class="page-head">Update your profile</h1>
 
-  <div>
+  <div id = "sign-up">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :fName, "First Name" %>
+      <%= f.label :fName, "First Name", class: "field-text" %>
       <%= f.text_field :fName %>
       
-      <%= f.label :lName, "Last Name" %>
+			<span class="ur-fname">First name required</span>
+			
+			<br>
+      <%= f.label :lName, "Last Name", class: "field-text" %>
       <%= f.text_field :lName %>
-
-      <%= f.label :email, "Email" %>
+			
+			<span class="ur-lname">Last name required</span>
+			
+			<br>			
+      <%= f.label :email, "Email", class: "field-text" %>
       <%= f.text_field :email %>
       
-      <%= f.label :sID, "Student ID" %>
+			<span class="ur-email">A valid University of Rochester email is required</span>
+			
+			<br>
+      <%= f.label :sID, "Student ID", class: "field-text" %>
       <%= f.text_field :sID %>
       
-      <%= f.label :classYr, "Class Year" %>
+			<span class="ur-id">A valid University of Rochester ID is required</span>
+			
+			<br>
+      <%= f.label :classYr, "Class Year", class: "field-text" %>
       <%= f.text_field :classYr %>
-
-      <%= f.label :password, "Password" %>
+			
+			<span class="ur-class">Current undergraduate status is required</span>
+			
+			<br>
+      <%= f.label :password, "Password", class: "field-text" %>
       <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
+		
+			<span class="ur-pass">Please enter a 6 character password</span>
+		
+			<br>
+      <%= f.label :password_confirmation, "Confirmation", class: "field-text" %>
       <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+			
+			<span class="ur-conf">Password and confirmation do not match</span>
+			
+			<br><br>
+			
+      <%= f.submit "Save changes", class: "signup" %>
     <% end %>  
 	</div>
-   
+   		<br><br>
 	<% if current_user?(@user) %>
-	    | <%= link_to "Delete", @user, method: :delete,
+	    <%= link_to "Delete Account", @user, class: "delete", method: :delete,
 	                                  data: { confirm: "Are you sure?" } %>
 	  <% end %>
