@@ -122,6 +122,34 @@ fieldset {
   font-size: 3em;
 }
 
+.welcome {
+  text-align: left;
+  font-family: 'Exo 2';
+  color: #00467f;
+  font-size: 2em;
+	margin-left: 1em;
+}
+
+.username {
+	list-style: none;
+	font-family: sans-serif;
+	font-size: 1.2em;
+	margin: 5px 5px 5px 5px;
+}
+
+.username a {
+	color: #00467f;
+	text-decoration: none;
+}
+
+.username a:visited {
+	color: #00467f;
+}
+
+.username a:hover {
+	color: #00467f;
+	text-decoration: underline;
+}
 
 /* FORM STYLES =========================== */
 
