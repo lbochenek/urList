@@ -2,144 +2,105 @@
 //= require jquery_ujs
 //= require_tree
 
-// start off by hiding success and error messages 
-$('.send-success').hide();
-$('.send-error').hide();
+
+// test js link
+console.log("application.js loaded");
+
+// all code waits for the page to load
+$(document).ready(function () {	
+	
+	// hide error messages by default
+	$('.ur-fname').hide(); 
+	$('.ur-lname').hide(); 
+	$('.ur-email').hide(); 
+	$('.ur-id').hide(); 
+	$('.ur-class').hide();
+	$('.ur-pass').hide(); 
+	$('.ur-conf').hide(); 
+	
+	// first name cannot be blank
+	$( "#user_fName" ).blur(function() {
+		if ($( "#user_fName" ).val() == '') {
+			$( "#user_fName" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.ur-fname').fadeIn();
+		} else { $( "#user_fName" ).removeClass( "red-border" ).addClass( "green-border" );
+		$('.ur-fname').hide();
+	}
+	});
+	
+	// last name cannot be blank
+	$( "#user_lName" ).blur(function() {
+		if ($( "#user_lName" ).val() == '') {
+			$( "#user_lName" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.ur-lname').fadeIn();
+		} else { $( "#user_lName" ).removeClass( "red-border" ).addClass( "green-border" );
+		$('.ur-lname').hide();
+	}
+	});
+	
+	// email must end in 'rochester.edu'
+	$( "#user_email" ).blur(function() {
+		var email = $( "#user_email" ).val();
+		var email_check = email.substr(email.length - 13);
+		if(email_check != "rochester.edu"){
+			$( "#user_email" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.ur-email').fadeIn();
+		} else {
+			$( "#user_email" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.ur-email').hide();
+		}
+	
+	});
+
+	// student id length of 8 numbers
+	$( "#user_sID" ).blur(function() {
+		var sID = $( "#user_sID" ).val().length;
+		if(sID == 8){
+			$( "#user_sID" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.ur-id').hide();
+		} else {
+			$( "#user_sID" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.ur-id').fadeIn();
+		}
+	});
+	
+	// class year between 2015-2018
+	$( "#user_classYr" ).blur(function() {
+		var classYr = $( "#user_classYr" ).val();
+		if(classYr >= 2015  && classYr <= 2018 && classYr % 1 == 0){
+			$( "#user_classYr" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.ur-class').hide();
+		} else {
+			$( "#user_classYr" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.ur-class').fadeIn();
+		}
+	});
+
+	// password of >=6 characters
+	$( "#user_password" ).blur(function() {
+		var password = $( "#user_password" ).val();
+		var password_count = password.length;
+		if(password_count >= 6){
+			$( "#user_password" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.ur-pass').hide(); //THIS IS NOT GOING AWAY?!?
+		} else {
+			$( "#user_password" ).removeClass( "green-border" ).addClass( "red-border" );}
+			$('.ur-pass').fadeIn(); 
+	});
+
+	// password confirmation = password
+	$( "#user_password_confirmation" ).blur(function() {
+		var password = $( "#user_password" ).val();
+		var password_confirm = $( "#user_password_confirmation" ).val();
+		if(password == password_confirm && password_confirm != ''){
+			$( "#user_password_confirmation" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.ur-conf').hide();
+		} else {
+			$( "#user_password_confirmation" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.ur-conf').fadeIn();
+		}
+	});
 
 
 
-
-// make sure user entered first name
-  $('form input[name="fname"]').blur(function () {
-    var fname = $(this).val();
-      if (fname == 0) {
-        $('form input[name="fname"]').removeClass("green-border").addClass("red-border");
-}     else {
-    $('form input[name="fname"]').removeClass("red-border").addClass("green-border");
-}
-
-});  
-
-// make sure user entered last name
-  $('form input[name="lname"]').blur(function () {
-    var fname = $(this).val();
-      if (fname == 0) {
-        $('form input[name="lname"]').removeClass("green-border").addClass("red-border");
-}     else {
-    $('form input[name="lname"]').removeClass("red-border").addClass("green-border");
-}
-
-});  
-
-
-// make sure user entered password
-  $('form input[name="password"]').blur(function () {
-    var fname = $(this).val();
-      if (fname == 0) {
-        $('form input[name="password"]').removeClass("green-border").addClass("red-border");
-}     else {
-    $('form input[name="password"]').removeClass("red-border").addClass("green-border");
-}
-
-});  
-
-
-
-// email verification
-//requirements: A-Z characters, numbers + @, .edu domain
-$('form input[name="email"]').blur(function () {
-    var email = $(this).val();
-    var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.edu/igm;
-if (re.test(email)) {
-    $('form input[name="email"]').removeClass("red-border").addClass("green-border");
-    $('.email-error').hide();
-} else {
-    $('form input[name="email"]').removeClass("green-border").addClass("red-border");
-    $('.email-error').fadeIn();
-}
-
-});  
-  
-// studentid verification
-// requirements: 8 integers
-  $('form input[name="studentid"]').blur(function () {
-    var studentid = $(this).val();
-    var re = /^[0-9]{8}$/;
-      if (re.test(studentid)) {
-        $('form input[name="studentid"]').removeClass("red-border").addClass("green-border");
-        $('.id-error').hide();
-}     else {
-    $('form input[name="studentid"]').removeClass("green-border").addClass("red-border");
-    $('.id-error').fadeIn();
-}
-
-});  
-
-
-
-// check that each entry meets criteria
-function fNameCheck(){
-  var fname = $('#fname').val();
-  return fname.length > 0;
-};
-
-function lNameCheck(){
-  var lname = $('#lname').val();
-  return lname.length > 0;
-};
-
-function passwordCheck(){
-  var pass = $('#password').val();
-  return pass.length > 0;
-};
-
-function emailCheck(){
-  var email = $('#email').val();
-  var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.edu/igm;
-  return (re.test(email));
-};
-
-function studentidCheck(){
-  var studentid = $('#studentid').val();
-  var re = /^\d{8}(-\d{4})?(?!-)$/;
-  return (re.test(studentid));
-};
-
-
-// check if all entries meet criteria
-function canSubmit(){
-  return fNameCheck() && lNameCheck() && emailCheck() && studentidCheck() && passwordCheck();
-};
-
-// post data to mySQL if all meets criteria
-function enableSubmit(){
-  if(canSubmit()){
-    // insert function to post to mySQL here... ruby gem??
-    //
-    //
-    //
-    //
-    //
-    console.log("success");
-    
-    // reset form borders and remove entered text
-    // remove error message, if there
-    // add success message
-    
-    document.getElementById("form").reset();
-    $('.send-error').hide();
-    $('form input[name="studentid"]').removeClass("green-border");
-    $('form input[name="email"]').removeClass("green-border");
-    $('form input[name="password"]').removeClass("green-border");
-    $('form input[name="lname"]').removeClass("green-border");
-    $('form input[name="fname"]').removeClass("green-border");
-    $('.send-success').fadeIn(); 
-    $('.send-success').fadeOut(3000);
-    // source: http://api.jquery.com/fadeout/
-
-   
-  } else {
-    console.log("submit blocked");
-    $('.send-error').fadeIn();
-  }
-}
+});
