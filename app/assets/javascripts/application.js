@@ -84,8 +84,9 @@ $(document).ready(function () {
 			$( "#user_password" ).removeClass( "red-border" ).addClass( "green-border" );
 			$('.ur-pass').hide(); //THIS IS NOT GOING AWAY?!?
 		} else {
-			$( "#user_password" ).removeClass( "green-border" ).addClass( "red-border" );}
+			$( "#user_password" ).removeClass( "green-border" ).addClass( "red-border" );
 			$('.ur-pass').fadeIn(); 
+		}
 	});
 
 	// password confirmation = password
