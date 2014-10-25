@@ -3,8 +3,9 @@
 
   <div id = "sign-up">
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
-      
+      <div class="alert-message">
+				<%= render 'shared/error_messages' %>
+      </div>
 
       <%= f.label :fName, "First Name", class: "field-text" %>
       <%= f.text_field :fName %>
@@ -50,6 +51,8 @@
 			<br><br>
     
       <%= f.submit "Create my account", class: "account-submit" %>
+
+			<br><br>
 
     <% end %>
   </div>
