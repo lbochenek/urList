@@ -1,9 +1,11 @@
 html, body {
-  overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 #sign-up {
 	text-align: center;
+	margin-top: -2em;
 }
 
 .nav-link {
@@ -46,7 +48,7 @@ ul#navlist {
 }
 
 .nav-link:hover {
-  background-color: #025395;
+  background-color: #2447B2;
 }
 
 .signup {
@@ -74,6 +76,7 @@ ul#navlist {
 	max-width: 200px;
 	text-align: center;
 	margin: 0 auto;
+	margin-bottom: 5em;
 }
 
 
@@ -104,6 +107,7 @@ fieldset {
   font-size: 1.5em;
   padding-left: 1em;
   padding-right: 1em;
+	margin-bottom: 2em;
   border: 1px solid black;
   border-radius: 10px;
   background-color: #00467f;
@@ -151,7 +155,47 @@ fieldset {
 	text-decoration: underline;
 }
 
-/* FORM STYLES =========================== */
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #e5e5e5;
+	border-top: 1px solid #ccc;
+	height: 3em;
+
+}
+
+footer li {
+	text-align: center;
+	list-style: none;
+	display: inline;	
+	text-decoration: none;
+	color: black;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+footer a:visited {
+	color: black;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+.alert-message {
+	color: red;
+	text-align: left;
+/*	border: 1px solid red; */
+	width: 50%;
+	margin: 0 auto;
+	font-family: 'Exo 2';
+}
+
+
+/* JS FORM STYLES =========================== */
 
 .green-border {
   border: 2px solid green;
