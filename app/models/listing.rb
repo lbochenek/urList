@@ -6,7 +6,4 @@ class Listing < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true, length: { maximum: 1000 }
 
-  def feed
-  end
-
 end
