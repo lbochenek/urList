@@ -1,6 +1,6 @@
 
 <li id="listing-<%= listing.id %>">
-  <span class="user"><%= link_to current_user.fName, listing.user %></span>
+  <span class="user"><%= link_to listing.user.fName, listing.user %></span><!-- here is the wrong name displayed issue -->
   <span class="content"><%= listing.title %> Price: $ <%= listing.price %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(listing.created_at) %> ago.
