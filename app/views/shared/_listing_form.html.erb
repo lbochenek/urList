@@ -1,0 +1,9 @@
+<%= form_for(@listing) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "What are you selling?" %>
+		<%= f.text_field :price, placeholder: "$" %>
+		<%= f.text_area :content, placeholder: "More info..." %>
+  </div>
+  <%= f.submit "Post", class: "signup" %>
+<% end %>

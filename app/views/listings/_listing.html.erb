@@ -1,0 +1,14 @@
+
+<li id="listing-<%= listing.id %>">
+  <span class="user"><%= link_to listing.user.fName, listing.user %></span><!-- here is the wrong name displayed issue -->
+  <span class="content"><%= listing.title %> Price: $ <%= listing.price %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(listing.created_at) %> ago.
+		<% if current_user?(listing.user) %>
+		      <%= link_to "delete", listing, method: :delete,
+		                                       data: { confirm: "Are you sure?" },
+		                                       title: listing.content %>
+		    <% end %>
+  </span>
+</li>
+
