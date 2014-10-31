@@ -67,7 +67,7 @@ $(document).ready(function () {
 	// class year between 2015-2018
 	$( "#user_classYr" ).blur(function() {
 		var classYr = $( "#user_classYr" ).val();
-		if(classYr >= 2015  && classYr <= 2018 && classYr % 1 == 0){
+		if(classYr != ''){
 			$( "#user_classYr" ).removeClass( "red-border" ).addClass( "green-border" );
 			$('.ur-class').hide();
 		} else {
