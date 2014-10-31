@@ -39319,3 +39319,1433 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 16:07:18 -0400
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 16:07:18 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 17:17:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "listings"  WHERE "listings"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (22.8ms)
+  Rendered shared/_error_messages.html.erb (23.2ms)
+  Rendered shared/_listing_form.html.erb (71.8ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "listings"
+  [1m[36mListing Load (0.9ms)[0m  [1mSELECT  "listings".* FROM "listings"   ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered listings/_listing.html.erb (380.1ms)
+  Rendered shared/_feed.html.erb (384.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (506.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1069ms (Views: 853.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:37 -0400
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-10-30 17:17:50 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yZI3u2LgQg2PXDiGQeVX0RZXpgMYVbFcb3ZMOOXSCb4="}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = 2  [["remember_digest", nil], ["updated_at", "2014-10-30 21:17:50.984140"]]
+  [1m[36m (549.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 555ms (ActiveRecord: 550.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 137ms (Views: 133.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 17:17:51 -0400
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:17:52 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (38.7ms)
+Completed 500 Internal Server Error in 67ms
+
+ActionView::Template::Error (undefined method `classYear' for "2018":String):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, ['2018','2017','2016','2015','Take 5 / KEY','Graduate'], :classYr, :classYear%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1301075169784144171_70136974640260'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1301075169784144171_70136974640260'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.1ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:18:13 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `classYr' for "2018":String):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, ['2018','2017','2016','2015','Take 5 / KEY','Graduate'], :classYr, :classYr%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1301075169784144171_70136977936480'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1301075169784144171_70136977936480'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.5ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:20:48 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (undefined method `classYrs' for "2018":String):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, ['2018','2017','2016','2015','Take 5 / KEY','Graduate'], :classYrs, :classYrs%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1301075169784144171_70137018094500'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1301075169784144171_70137018094500'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:22:15 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (["2018", "2017", "2016", "2015", "Take 5 / KEY", "Graduate"] is not a symbol):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, ['2018','2017','2016','2015','Take 5 / KEY','Graduate'], @classYrs, @classYrs%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1301075169784144171_70137019517980'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1301075169784144171_70137019517980'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.8ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:22:38 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `map' for :classYrs:Symbol):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, :classYrs, @classYrs, @classYrs%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1301075169784144171_70137020794460'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1301075169784144171_70137020794460'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.5ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:24:48 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (["2018", "2017", "2016", "2015", "Take 5 / KEY", "Graduate"] is not a symbol):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, @classYrs, @classYrs, @classYrs%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1301075169784144171_70137031426240'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1301075169784144171_70137031426240'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.9ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:24:58 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (["2018", "2017", "2016", "2015", "Take 5 / KEY", "Graduate"] is not a symbol):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, @classYrs, @classYrs, @classYrs%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1301075169784144171_70137033787660'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1301075169784144171_70137033787660'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 17:25:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 347ms (Views: 320.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 17:25:26 -0400
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 17:25:28 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (23.1ms)
+  Rendered users/new.html.erb within layouts/application (56.5ms)
+Completed 500 Internal Server Error in 134ms
+
+ActionView::Template::Error (["2018", "2017", "2016", "2015", "Take 5 / KEY", "Graduate"] is not a symbol):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, @classYrs, @classYrs, @classYrs%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__599580812533369665_70210229710120'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__599580812533369665_70210229710120'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 19:26:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (21.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 2315ms (Views: 2289.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 19:26:31 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 19:26:32 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 19:26:32 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 19:26:32 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 19:26:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 19:26:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 19:26:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 19:26:32 -0400
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 19:26:36 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (23.0ms)
+  Rendered users/new.html.erb within layouts/application (62.4ms)
+Completed 500 Internal Server Error in 113ms
+
+ActionView::Template::Error (undefined method `classYr' for "2018":String):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, @classYrs, :classYr, :classYr%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb___4077703790192020488_70270402763740'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___4077703790192020488_70270402763740'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.8ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 19:29:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (1.7ms)
+  Rendered users/new.html.erb within layouts/application (168694.4ms)
+Completed 500 Internal Server Error in 168716ms
+
+ActionView::Template::Error (undefined method `classYr' for "2018":String):
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <% byebug %>
+    39:       <%= f.collection_select :classYr, @classYrs, :classYr, :classYr%>
+    40: 			
+    41: 			<span class="ur-class">Current undergraduate status is required</span>
+    42: 			
+  app/views/users/new.html.erb:39:in `block in _app_views_users_new_html_erb__895765029797225810_70132120518960'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__895765029797225810_70132120518960'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 19:34:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (1.6ms)
+  Rendered users/new.html.erb within layouts/application (19.3ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (undefined method `classYr' for "2018":String):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.collection_select :classYr, @classYrs, :classYr, :classYr%>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1320098050261703192_70170236125440'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1320098050261703192_70170236125440'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.6ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 19:34:14 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (59609.8ms)
+Completed 500 Internal Server Error in 59612ms
+
+ActionView::Template::Error (undefined method `classYr' for "2018":String):
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <% byebug %>
+    39:       <%= f.collection_select :classYr, @classYrs, :classYr, :classYr%>
+    40: 			
+    41: 			<span class="ur-class">Current undergraduate status is required</span>
+    42: 			
+  app/views/users/new.html.erb:39:in `block in _app_views_users_new_html_erb__1320098050261703192_70170174783300'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1320098050261703192_70170174783300'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.5ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 19:36:44 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (63.0ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (6.4ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 374ms (Views: 371.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-30 19:37:53 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>";lkasdjfa;lk", "lName"=>"sd;lfkjas;dflkj", "email"=>"foo@u.rochester.edu", "sID"=>"09876543", "classYr"=>"2018", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@u.rochester.edu') LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."sID" = 9876543 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered shared/_error_messages.html.erb (2.6ms)
+  Rendered users/new.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 3675ms
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    35:       <%= f.text_field :classYr %> -->
+    36:       
+    37:       <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    38:       <%= f.select :classYr, @classYrs %>
+    39: 			
+    40: 			<span class="ur-class">Current undergraduate status is required</span>
+    41: 			
+  app/views/users/new.html.erb:38:in `block in _app_views_users_new_html_erb__1320098050261703192_70170232363040'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__1320098050261703192_70170232363040'
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-10-30 19:40:12 -0400
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-10-30 19:40:12 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 253ms (Views: 250.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 19:40:14 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 245ms (Views: 243.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 19:40:16 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (30.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 278ms (Views: 255.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-30 19:42:00 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>"asdflkj", "lName"=>"asfasdf", "email"=>"asdfasf@u.rochester.edu", "sID"=>"55555555", "classYr"=>"2018", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('asdfasf@u.rochester.edu') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."sID" = 55555555 LIMIT 1
+  [1m[36mSQL (62.3ms)[0m  [1mINSERT INTO "users" ("classYr", "created_at", "email", "fName", "lName", "password_digest", "sID", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["classYr", 2018], ["created_at", "2014-10-30 23:42:00.131271"], ["email", "asdfasf@u.rochester.edu"], ["fName", "asdflkj"], ["lName", "asfasdf"], ["password_digest", "$2a$10$kucW0wFjYSwRZc1IEK0mouvZbTBw4BalyqD7a/SS74OmGqdrEYuFK"], ["sID", 55555555], ["updated_at", "2014-10-30 23:42:00.131271"]]
+  [1m[35m (558.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 714ms (ActiveRecord: 621.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2014-10-30 19:42:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mListing Exists (0.8ms)[0m  SELECT  1 AS one FROM "listings"  WHERE "listings"."user_id" = $1 LIMIT 1  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1[0m
+  Rendered layouts/_header.html.erb (23.8ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 369ms (Views: 272.3ms | ActiveRecord: 4.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 19:44:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "listings"  WHERE "listings"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered shared/_user_info.html.erb (6.0ms)
+  Rendered shared/_error_messages.html.erb (2.1ms)
+  Rendered shared/_listing_form.html.erb (41.7ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "listings"
+  [1m[36mListing Load (0.7ms)[0m  [1mSELECT  "listings".* FROM "listings"   ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered listings/_listing.html.erb (262.2ms)
+  Rendered shared/_feed.html.erb (277.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (352.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 538ms (Views: 476.2ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "listings"  WHERE "listings"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered shared/_user_info.html.erb (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_listing_form.html.erb (1.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "listings"
+  [1m[36mListing Load (0.3ms)[0m  [1mSELECT  "listings".* FROM "listings"   ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered listings/_listing.html.erb (2.2ms)
+  Rendered shared/_feed.html.erb (4.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 19:44:15 -0400
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:00 -0400
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 19:45:01 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>"a;lkdfjaofiujkls", "lName"=>"igakl;dnszbjhlgfiuio", "email"=>"foo123@u.rochester.edu", "sID"=>"00000000", "classYr"=>"Graduate", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo123@u.rochester.edu') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."sID" = 0 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 128ms (Views: 47.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 19:47:29 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>"a;lkdfjaofiujkls", "lName"=>"igakl;dnszbjhlgfiuio", "email"=>"foo123@u.rochester.edu", "sID"=>"00000000", "classYr"=>"Take 5 / KEY", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo123@u.rochester.edu') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."sID" = 0 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 114ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:24 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-30 19:48:43 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>"a;lkdfjaofiujkls", "lName"=>"igakl;dnszbjhlgfiuio", "email"=>"foo123@u.rochester.edu", "sID"=>"55409456", "classYr"=>"Take 5 / KEY", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo123@u.rochester.edu') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."sID" = 55409456 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("classYr", "created_at", "email", "fName", "lName", "password_digest", "sID", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["classYr", 0], ["created_at", "2014-10-30 23:48:44.048466"], ["email", "foo123@u.rochester.edu"], ["fName", "a;lkdfjaofiujkls"], ["lName", "igakl;dnszbjhlgfiuio"], ["password_digest", "$2a$10$PisjyWdp3Zv3yTOmQzszB.NPMqFiaPkdRBI5Bm1IT0QuabEXZPnMC"], ["sID", 55409456], ["updated_at", "2014-10-30 23:48:44.048466"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 75ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mListing Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "listings"  WHERE "listings"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 57.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 19:48:44 -0400
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users"  WHERE (LOWER("users"."email") = LOWER('foo123@u.rochester.edu') AND "users"."id" != 4) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."sID" = 55409456 AND "users"."id" != 4) LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeUserClassYear (20141030235733)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (111.2ms)[0m  [1mALTER TABLE "users" ALTER COLUMN "classYr" TYPE character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141030235733"]]
+  [1m[36m (24.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered shared/_error_messages.html.erb (2.0ms)
+  Rendered users/edit.html.erb within layouts/application (29.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 157ms (Views: 130.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:00:20 -0400
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2014-10-30 20:04:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered shared/_error_messages.html.erb (1.6ms)
+  Rendered users/_form.html.erb (43.5ms)
+  Rendered users/edit.html.erb within layouts/application (46.8ms)
+Completed 500 Internal Server Error in 76ms
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    32:     <%= f.text_field :classYr %> -->
+    33:     
+    34:     <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    35:     <%= f.select :classYr, @classYrs %>
+    36: 		
+    37: 		<span class="ur-class">Current undergraduate status is required</span>
+    38: 		
+  app/views/users/_form.html.erb:35:in `block in _app_views_users__form_html_erb__2239812449345122582_70255372071320'
+  app/views/users/_form.html.erb:2:in `_app_views_users__form_html_erb__2239812449345122582_70255372071320'
+  app/views/users/edit.html.erb:4:in `_app_views_users_edit_html_erb___3433434915147856640_70255388983520'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (25.2ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.0ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2014-10-30 20:08:23 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/edit.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::CLASS_YEARS):
+    32:     <%= f.text_field :classYr %> -->
+    33:     
+    34:     <%= f.label :classYr, "Class Year", class: "field-text" %>  
+    35:     <%= f.select :classYr, CLASS_YEARS %>
+    36: 		
+    37: 		<span class="ur-class">Current undergraduate status is required</span>
+    38: 		
+  app/views/users/_form.html.erb:35:in `block in _app_views_users__form_html_erb__2239812449345122582_70255345486220'
+  app/views/users/_form.html.erb:2:in `_app_views_users__form_html_erb__2239812449345122582_70255345486220'
+  app/views/users/edit.html.erb:4:in `_app_views_users_edit_html_erb___3433434915147856640_70255388983520'
+
+
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/laurabochenek/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.2ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/_form.html.erb (4.1ms)
+  Rendered users/edit.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 77ms (Views: 65.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:09:06 -0400
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mListing Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "listings"  WHERE "listings"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 161ms (Views: 104.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:32 -0400
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered shared/_error_messages.html.erb (1.6ms)
+  Rendered users/_form.html.erb (10.2ms)
+  Rendered users/edit.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 55.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:34 -0400
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2014-10-30 20:17:38 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>"a;lkdfjaofiujkls", "lName"=>"igakl;dnszbjhlgfiuio", "email"=>"foo123@u.rochester.edu", "sID"=>"55409456", "classYr"=>"Take 5 / KEY", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE (LOWER("users"."email") = LOWER('foo123@u.rochester.edu') AND "users"."id" != 4) LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."sID" = 55409456 AND "users"."id" != 4) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "classYr" = $1, "updated_at" = $2 WHERE "users"."id" = 4  [["classYr", "Take 5 / KEY"], ["updated_at", "2014-10-31 00:17:38.962860"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-10-30 20:17:38 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mListing Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "listings"  WHERE "listings"."user_id" = $1 LIMIT 1[0m  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:39 -0400
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/edit.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:41 -0400
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-10-30 20:17:45 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc="}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 20:17:45 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:46 -0400
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/_form.html.erb (2.9ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:17:47 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>"asdfaegajkfld", "lName"=>"s;jklhasdjlkfalkh", "email"=>"57@u.rochester.edu", "sID"=>"73957329", "classYr"=>"2017", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('57@u.rochester.edu') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."sID" = 73957329 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 327ms (Views: 56.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:29 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "user"=>{"fName"=>"asdfaegajkfld", "lName"=>"s;jklhasdjlkfalkh", "email"=>"57@u.rochester.edu", "sID"=>"73957329", "classYr"=>"2017", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('57@u.rochester.edu') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."sID" = 73957329 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("classYr", "created_at", "email", "fName", "lName", "password_digest", "sID", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["classYr", "2017"], ["created_at", "2014-10-31 00:18:50.891908"], ["email", "57@u.rochester.edu"], ["fName", "asdfaegajkfld"], ["lName", "s;jklhasdjlkfalkh"], ["password_digest", "$2a$10$ZubpP86yPIHj1nqQ3RNI1e3Ug5rLqE.DG2qJMHvexT9aWpQfbtBs2"], ["sID", 73957329], ["updated_at", "2014-10-31 00:18:50.891908"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 68ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mListing Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "listings"  WHERE "listings"."user_id" = $1 LIMIT 1[0m  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:50 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "listings"  WHERE "listings"."user_id" = $1  [["user_id", 5]]
+  Rendered shared/_user_info.html.erb (2.5ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_listing_form.html.erb (7.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  [1m[35mListing Load (0.7ms)[0m  SELECT  "listings".* FROM "listings"   ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered listings/_listing.html.erb (2.8ms)
+  Rendered shared/_feed.html.erb (6.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 85ms (Views: 63.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:18:57 -0400
+
+
+Started POST "/listings" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "listing"=>{"title"=>"my face", "price"=>"234534454534", "content"=>""}, "commit"=>"Post"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "listings"  WHERE "listings"."user_id" = $1  [["user_id", 5]]
+  Rendered shared/_user_info.html.erb (1.6ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered shared/_listing_form.html.erb (1.8ms)
+  Rendered shared/_feed.html.erb (0.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 58.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:05 -0400
+
+
+Started POST "/listings" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRz20kgqz9+efCTVZ1ymGFHg7/PRcnCo5W/otvR3aAc=", "listing"=>{"title"=>"my face", "price"=>"234534454534", "content"=>"Why is this hidden so a user can't see it?"}, "commit"=>"Post"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "listings" ("content", "created_at", "price", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Why is this hidden so a user can't see it?"], ["created_at", "2014-10-31 00:19:17.364953"], ["price", 234534454534.0], ["title", "my face"], ["updated_at", "2014-10-31 00:19:17.364953"], ["user_id", 5]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "listings"  WHERE "listings"."user_id" = $1  [["user_id", 5]]
+  Rendered shared/_user_info.html.erb (1.1ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_listing_form.html.erb (1.3ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  [1m[35mListing Load (0.3ms)[0m  SELECT  "listings".* FROM "listings"   ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered listings/_listing.html.erb (3.0ms)
+  Rendered shared/_feed.html.erb (4.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-30 20:19:17 -0400
