@@ -155,6 +155,50 @@ fieldset {
 	text-decoration: underline;
 }
 
+
+.listings {
+	list-style: none;
+	margin-bottom: 3em;
+}
+
+#listing {
+	border-top: 1px solid black;
+	padding-top: .5em;
+	padding-bottom: .5em;	
+	width: 40%;
+	min-width: 250px;
+	margin: 0 auto;
+}
+
+.post-form {
+	margin-left: 2em;
+}
+
+.left-input {
+	margin-top: 1em;
+	margin-left: .5em;
+	width: 250px;
+}
+
+.post {
+	margin-left: .5em;
+	width: 250px;
+}
+
+.text-input {
+	width: 250px;
+	margin-left: .5em;
+}
+
+.inline-delete {
+	color: red;
+	text-decoration: none;
+}
+
+.inline-delete:hover {
+	text-decoration: underline;
+}
+
 footer {
 	position: fixed;
 	bottom: 0;
