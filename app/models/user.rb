@@ -9,8 +9,9 @@ class User < ActiveRecord::Base
                                       uniqueness: { case_sensitive: false }                                   
         
     validates :sID, presence: true, length: { is: 8 }, uniqueness: true, numericality: { only_integer: true }
-    VALID_CLASSYR_REGEX = /\A(2015||2016||2017||2018)\z/
-    validates :classYr, presence: true, format: {with: VALID_CLASSYR_REGEX}
+    # VALID_CLASSYR_REGEX = /\A(2015||2016||2017||2018)\z/
+    # validates :classYr, presence: true, format: {with: VALID_CLASSYR_REGEX}
+    validates :classYr, presence: true
     has_secure_password
     validates :password, length: {minimum: 6}, allow_blank: true
     
