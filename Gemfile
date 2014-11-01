@@ -7,6 +7,7 @@ gem 'faker', '1.4.2'
 gem 'bcrypt', '3.1.7'
 gem 'pg'
 gem 'will_paginate', '3.0.7'
+gem 'remotipart'
 
 group :development, :test do
   # Use SCSS for stylesheets
