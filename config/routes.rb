@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :listings, only: [:create, :destroy]
   
   resources :users
+  resources :types
 
 
 
