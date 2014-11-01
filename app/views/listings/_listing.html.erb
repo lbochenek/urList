@@ -1,15 +1,15 @@
 <div class="listings">
 
 <li id="listing">
-  <span class="user"><%= link_to listing.user.fName, listing.user %> is selling</span>
+
   <span class="listing-title"><%= listing.title %> </span>
-	<span class="listing-price">for $ <%= listing.price %></span><br>
+	<span class="listing-price">for $ <%= listing.price %></span><br><br>
+	<span class="listing-content"><%= listing.content %></span><br><br>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(listing.created_at) %> ago
+    Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user %>
 		<% if current_user?(listing.user) %>
 		      <%= link_to "delete my post", listing, class: "inline-delete", method: :delete,
-		                                       data: { confirm: "Are you sure?" },
-		                                       title: listing.content %>
+		                                       data: { confirm: "Are you sure?" } %>
 		    <% end %>
   </span>
 </li>
