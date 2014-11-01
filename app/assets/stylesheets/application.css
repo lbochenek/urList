@@ -77,6 +77,7 @@ ul#navlist {
 	text-align: center;
 	margin: 0 auto;
 	margin-bottom: 5em;
+
 }
 
 
@@ -168,6 +169,11 @@ fieldset {
 	width: 40%;
 	min-width: 250px;
 	margin: 0 auto;
+
+}
+
+.timestamp {
+	color: grey;
 }
 
 .post-form {
