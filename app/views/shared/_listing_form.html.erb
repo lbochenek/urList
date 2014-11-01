@@ -2,24 +2,11 @@
 
 <%= form_for(@listing) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
   <div class="post-input">
     <%= f.text_field :title, placeholder: "What are you selling?", class: "left-input" %>
 		<%= f.text_field :price, placeholder: "$", class: "left-input"%>
 		<%= f.text_area :content, placeholder: "More info...", class: "text-input"%>
-<<<<<<< Updated upstream
     <%= f.collection_select :type_id, Type.all, :id, :category %>
-
-=======
-  <div class="field">
-    <%= f.text_field :title, placeholder: "What are you selling?" %>
-		<%= f.text_field :price, placeholder: "$" %>
-		<%= f.text_area :content, placeholder: "More info..." %>
-    <%= f.collection_select :type_id, Type.all, :id, :category %>
->>>>>>> Stashed changes
   </div>
   <%= f.submit "Post", class: "post"%>
 <% end %>
