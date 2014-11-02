@@ -1,20 +1,23 @@
 	<% if logged_out? %>
-
-		
     <div class="centered">
       <%= link_to "Make an account today!", signup_path, class: "signup" %>
     </div>
-		
 	<% else %>
-	
-	<div class="left">
-		<%= render 'shared/user_info' %>
-	  <%= render 'shared/listing_form' %>
-	</div>
-	<div class="centered">
-	  <h3 class="page-head">Listings</h3>
-	 	<%= render 'shared/feed' %>
-	</div>
+	  <div class="centered">
+		  <%= render 'shared/user_info' %>
+	    <%= render 'shared/listing_form' %>
+	  </div>
+    
+    <div>
+      <h3 class="page-head">Categories</h3>
+      <%= render 'static_pages/categories'%>
+    </div>
+  
+	  <div class="centered">
+	    <h3 class="page-head">Listings</h3>
+	 	  <%= render 'shared/feed' %>
+	  </div>
+  
     
   
   <% end %>
