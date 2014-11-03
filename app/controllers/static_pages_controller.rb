@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
       @listing = current_user.listings.build
       @feed_items = Listing.all.paginate(page: params[:page])
     end
+    
+    @types = Type.paginate(page: params[:page])
   end
 
   def help

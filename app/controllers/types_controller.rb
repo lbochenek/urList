@@ -3,5 +3,5 @@ class TypesController < ApplicationController
     @type = Type.find(params[:id])
     @listings = @type.listings.paginate(page: params[:page])
   end
-  
+    
 end
