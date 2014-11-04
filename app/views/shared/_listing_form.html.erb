@@ -1,6 +1,6 @@
-<div class="post-form">
+<div id="post-form">
 
-<%= form_for(@listing) do |f| %>
+<%= form_for(@listing, remote: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
   <div class="post-input">
