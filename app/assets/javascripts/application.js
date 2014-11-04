@@ -8,7 +8,7 @@ console.log("application.js loaded");
 
 // all code waits for the page to load
 $(document).ready(function () {	
-	
+  
 	// hide error messages by default
 	$('.ur-fname').hide(); 
 	$('.ur-lname').hide(); 
@@ -101,6 +101,8 @@ $(document).ready(function () {
 			$('.ur-conf').fadeIn();
 		}
 	});
+  
+
 	
 
 

@@ -10,7 +10,10 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.build(listing_params)
     if @listing.save
       flash[:success] = "Listing created!"
-      redirect_to root_url
+      respond_to do |format|
+        format.html { redirect_to root_url }
+        format.js
+      end
     else
       @feed_items = []
       render 'static_pages/home'
