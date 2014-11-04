@@ -1,0 +1,7 @@
+// used http://edgeguides.rubyonrails.org/working_with_javascript_in_rails.html and http://stackoverflow.com/questions/17258175/using-ajax-to-remove-an-item-without-refreshing-the-page
+
+$(function() {
+  return $("a[data-remote]").on("ajax:success", function(e, data, status, xhr) {
+     $(this).closest('li').remove();
+  });
+});

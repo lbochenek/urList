@@ -10,8 +10,10 @@
     Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user %>
 		<% if current_user?(listing.user) %>
 		      <%= link_to "Edit", edit_listing_path(listing.id)%>
-          <%= link_to "delete my post", listing, class: "inline-delete", method: :delete,
-		                                       data: { confirm: "Are you sure?" } %>
+          <%= link_to "delete my post", listing, remote: true, 
+                                                 class: "inline-delete", 
+                                                 method: :delete,
+		                                             data: { confirm: "Are you sure?" } %>
 		<% end %>
   </span>
 </li>

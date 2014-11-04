@@ -23,17 +23,30 @@ class ListingsController < ApplicationController
   def destroy
     @listing.destroy
     flash[:success] = "Listing deleted"
-    redirect_to request.referrer || root_url
+    
+    respond_to do |format|
+      format.html { redirect_to request.referrer || root_url}
+      format.js
+    end  
+    # redirect_to request.referrer || root_url
   end
 
   def edit
     @listing = Listing.find(params[:id])
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
   end
   
   def update
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
       flash[:success] = "Profile updated"
+      # respond_to do |format|
+  #       format.html { redirect_to @listing }
+  #       format.js
+  #     end
       redirect_to @listing
     else
       render 'edit'
