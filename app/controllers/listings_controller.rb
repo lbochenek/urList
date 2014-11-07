@@ -33,21 +33,21 @@ class ListingsController < ApplicationController
 
   def edit
     @listing = Listing.find(params[:id])
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def update
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
       flash[:success] = "Profile updated"
-      # respond_to do |format|
-  #       format.html { redirect_to @listing }
-  #       format.js
-  #     end
-      redirect_to @listing
+      respond_to do |format|
+        format.html { redirect_to @listing }
+        format.js
+      end
+      # redirect_to @listing
     else
       render 'edit'
     end
