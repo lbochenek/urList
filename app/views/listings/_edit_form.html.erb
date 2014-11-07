@@ -1,4 +1,4 @@
-<% provide(:title, "Edit listing") %>
+<div id="edit_form">
 
 <%= render 'shared/listing_form'%>
 
@@ -6,3 +6,6 @@
       <%= link_to "Delete Account", @user, class: "delete", method: :delete,
 	                                  data: { confirm: "Are you sure?" } %>
 	<% end %>
+  
+</div>  
+  
