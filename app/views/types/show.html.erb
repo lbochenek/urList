@@ -1,14 +1,5 @@
 <% provide(:title, @type.category) %>
 
 <div>
-  <h1><%= @type.category %></h1>
-</div>
-
-<div>
-  <% if @type.listings.any? %>
-    <ol class="listings">
-      <%= render @listings %>
-    </ol>
-    <%= will_paginate @listings %>
-  <% end %>
+<%= render partial: 'types/show_types', locals: { type: @type, listings: @listings } %>
 </div>

@@ -3,13 +3,6 @@
 // also used https://github.com/camsong/AjaxCRUD/blob/master/app/views/entries/create.js.erb
 
 $(document).ready(function() {
-  // return $("#post-form").on("ajax:success", function(e, data, status, xhr) {
-    // $("#list").prepend("<%= escape_javascript(render(partial: 'listings/listing', locals: { listing: @listing })) %>");
-    // $("#list").prepend("<%= j(render(@listing)) %>");
-    $("#list").prepend("<%= j(render @listing) %>");
-    $("#new_listing")[0].reset();
-    // return $("#new_listing")[0].reset();
-  // }).on("ajax:error", function(e, xhr, status, error) {
-//     return alert("fail!");
-  // });
+  $("#list").prepend("<%= j(render @listing) %>");
+  $("#new_listing")[0].reset();
 });

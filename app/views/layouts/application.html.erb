@@ -12,14 +12,19 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div>
-      <% flash.each do |message_type, message| %>
-        <%= message %>
-      <% end %>
+    <div id=categories>
+      <%= render 'layouts/categories' %>
+    </div>
+    <div id="application">    
+      <div>
+        <% flash.each do |message_type, message| %>
+          <%= message %>
+        <% end %>
       
-      <%= yield %>
-      <!-- <%= render 'layouts/footer' %> -->
-      <%= debug(params) if Rails.env.test? %>
+        <%= yield %>
+        <!-- <%= render 'layouts/footer' %> -->
+        <%= debug(params) if Rails.env.test? %>
+      </div>
     </div>
   </body>
 </html>

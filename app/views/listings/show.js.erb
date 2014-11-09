@@ -1,0 +1,4 @@
+$(document).ready(function() {
+  $("#categories").replaceWith("<%= j(render(partial: 'layouts/categories')) %>");
+  $("#application").replaceWith("<%= j(render(partial: 'listings/listing_long', locals: {listing: @listing})) %>");
+});

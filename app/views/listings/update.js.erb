@@ -1,7 +1,10 @@
 $(document).ready(function() {
-  // return $("#post-form").on("ajax:success", function(e, data, status, xhr) {
-    $("#edit_form").replaceWith("<%= j(render(partial: 'shared/feed', locals: { feed_items: @feed_items })) %>");
-  // }).on("ajax:error", function(e, xhr, status, error) {
- //    return alert("fail!");
- //  });
+    $("#categories").replaceWith("<%= j(render(partial: 'layouts/categories')) %>");
+    // $("#userInfo").replaceWith("<%= j(render(partial: 'shared/user_info')) %>");
+    // // $("#createForm").replaceWith("<%= j(render(partial: 'shared/listing_form')) %>");
+    // $("#createForm").show();
+    
+    $("#edit_form").replaceWith("<%= j(render(partial: 'listings/listing_long', locals: { listing: @listing })) %>"); 
+    
+    // $("#post-form")[0].reset();
 });
