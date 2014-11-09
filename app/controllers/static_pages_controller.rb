@@ -5,7 +5,6 @@ class StaticPagesController < ApplicationController
       @feed_items = Listing.all.paginate(page: params[:page])
     end
     
-    @types = Type.paginate(page: params[:page])
   end
 
   def help
@@ -16,5 +15,5 @@ class StaticPagesController < ApplicationController
   
   def contact
   end
-  
+    
 end

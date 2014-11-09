@@ -13,7 +13,10 @@
 	    <ol class="listings">
 	      <%= render @listings %>
 	    </ol>
-	    <%= will_paginate @listings %>
+      
+      <div class="paginate">
+	      <%= will_paginate @listings %>
+      </div>  
 	  <% end %>
 	</div>
 </div>

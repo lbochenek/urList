@@ -1,11 +1,6 @@
 $(document).ready(function() {
-  $(function() {
-    return $("a[data-remote]").on("ajax:success", function(e, data, status, xhr) {
-      $(this).closest('li').replaceWith("<%= escape_javascript(render(partial: 'listings/edit_form', locals: { listing: @listing })) %>")
-    // return $(this).on("ajax:success", function(e, data, status, xhr) {
-    //   return $(".listing").replaceWith("<%= escape_javascript(render(partial: 'listings/edit_form', locals: { listing: @listing })) %>");
-      // return $(this).remove();
-//       return $("<%= escape_javascript(render(partial: 'listings/listing', locals: { listing: @listing })) %>").prepend("#list");
-     });
-   });
+  $("#categories").hide();
+  // $("#userInfo").hide();
+  // $("#createForm").hide();
+  $(".listing").replaceWith("<%= escape_javascript(render(partial: 'listings/edit_form', locals: { listing: @listing })) %>");
 });   

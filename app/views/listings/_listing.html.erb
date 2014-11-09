@@ -1,22 +1,13 @@
-<div class="listings">
+<div class="listing-link">
 
-<li class="listing">
-
-  <span class="listing-title"><%= listing.title %> </span>
-	<span class="listing-price">for $<%= '%.2f' % listing.price %></span><br><br>
+  <%= link_to listing.title, listing, remote: true %>
+  <span class="listing-price">for $<%= price(listing) %></span><br><br>
   <span class="listing-type"><%= listing.type.category %></span><br><br>
 	<span class="listing-content"><%= listing.content %></span><br><br>
   <span class="timestamp">
     Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user %>
-		<% if current_user?(listing.user) %>
-		      <%= link_to "Edit", edit_listing_path(listing.id), remote: true%>
-          <%= link_to "delete my post", listing, remote: true, 
-                                                 class: "inline-delete", 
-                                                 method: :delete,
-		                                             data: { confirm: "Are you sure?" } %>
-		<% end %>
-  </span>
-</li>
+  </span>  
+
 
 </div>
 

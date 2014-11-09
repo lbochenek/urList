@@ -1,0 +1,17 @@
+	<% if logged_out? %>
+    <div class="centered">
+      <%= link_to "Make an account today!", signup_path, class: "signup" %>
+    </div>
+	<% else %>
+    <div id="userInfo">  
+		  <%= render 'shared/user_info' %>
+    </div>  
+    <div id="createForm">  
+	    <%= render 'shared/listing_form' %>
+	  </div>
+  
+	  <div class="listings-list">
+	    <h3 class="page-head">Listings</h3>
+	 	  <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
+	  </div>
+  <% end %>

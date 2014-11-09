@@ -1,0 +1,10 @@
+<div id="application">
+  <h1><%= @type.category %></h1>
+  
+  <% if @type.listings.any? %>
+    <ol class="listings">
+      <%= render @listings %>
+    </ol>
+    <%= will_paginate @listings %>
+  <% end %>
+</div>

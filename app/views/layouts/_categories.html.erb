@@ -1,0 +1,7 @@
+<h3 class="page-head">Categories</h3>
+
+<ul>
+  <% @types.each do |type| %>
+		<%= link_to type.category, type, remote: true %>
+  <% end %>
+</ul>
