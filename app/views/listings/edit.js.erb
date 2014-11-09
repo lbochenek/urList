@@ -1,14 +1,12 @@
 $(document).ready(function() {
-  $(function() {
-    return $("a[data-remote]").on("ajax:success", function(e, data, status, xhr) {
-      console.log($(this));
-      $(this).closest('li').replaceWith("<%= escape_javascript(render(partial: 'listings/edit_form', locals: { listing: @listing })) %>");
-      var post = $(".post");
-      console.log($(this));
-      // console.log(post);
-      post.click(function(){
-        $("#post-form").replaceWith("<%= escape_javascript(render(partial: 'listings/listing', locals: { listing: @listing })) %>");
-      });
-     });
-   });
+  // $(function() {
+//     return $("a[data-remote]").on("ajax:success", function(e, data, status, xhr) {
+      // $(this).closest('li').replaceWith("<%= escape_javascript(render(partial: 'listings/edit_form', locals: { listing: @listing })) %>");
+      $("#feed").replaceWith("<%= escape_javascript(render(partial: 'listings/edit_form', locals: { listing: @listing })) %>");
+      // var post = $(".post");
+      // post.click(function(){
+      //   $("#post-form").replaceWith("<%= escape_javascript(render(partial: 'listings/listing', locals: { listing: @listing })) %>");
+      // });
+     // });
+   // });
 });   

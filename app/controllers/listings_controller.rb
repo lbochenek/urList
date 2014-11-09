@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
- 
+  
   def show
     @listing = Listing.find(params[:id])
   end  
@@ -43,6 +43,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
       flash[:success] = "Profile updated"
+      @feed_items = Listing.paginate(page: params[:page])
       respond_to do |format|
         format.html { redirect_to @listing }
         format.js

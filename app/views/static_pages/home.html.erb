@@ -1,3 +1,4 @@
+<div id="home">
 	<% if logged_out? %>
     <div class="centered">
       <%= link_to "Make an account today!", signup_path, class: "signup" %>
@@ -13,11 +14,9 @@
       <%= render 'static_pages/categories'%>
     </div>
   
-	  <div class="centered">
+	  <div class="listings-list">
 	    <h3 class="page-head">Listings</h3>
-	 	  <%= render 'shared/feed' %>
+	 	  <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
 	  </div>
-  
-    
-  
   <% end %>
+</div>

@@ -3,7 +3,7 @@
 <li class="listing">
 
   <span class="listing-title"><%= listing.title %> </span>
-	<span class="listing-price">for $<%= '%.2f' % listing.price %></span><br><br>
+	<span class="listing-price">for $<%= price(listing) %></span><br><br>
   <span class="listing-type"><%= listing.type.category %></span><br><br>
 	<span class="listing-content"><%= listing.content %></span><br><br>
   <span class="timestamp">
