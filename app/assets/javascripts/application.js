@@ -16,7 +16,10 @@ $(document).ready(function () {
 	$('.ur-id').hide(); 
 	$('.ur-class').hide();
 	$('.ur-pass').hide(); 
-	$('.ur-conf').hide(); 
+	$('.ur-conf').hide();
+	$('.title-error').hide();
+	$('.price-error').hide();
+	$('.content-error').hide(); 
 	
 	// first name cannot be blank
 	$( "#user_fName" ).blur(function() {
@@ -64,8 +67,8 @@ $(document).ready(function () {
 		}
 	});
 	
-	// class year between 2015-2018
-	$( "#user_classYr" ).blur(function() {
+	// class year
+	$( "#user_classYr" ).focus(function() {
 		var classYr = $( "#user_classYr" ).val();
 		if(classYr != ''){
 			$( "#user_classYr" ).removeClass( "red-border" ).addClass( "green-border" );
@@ -82,7 +85,7 @@ $(document).ready(function () {
 		var password_count = password.length;
 		if(password_count >= 6){
 			$( "#user_password" ).removeClass( "red-border" ).addClass( "green-border" );
-			$('.ur-pass').hide(); //THIS IS NOT GOING AWAY?!?
+			$('.ur-pass').hide(); 
 		} else {
 			$( "#user_password" ).removeClass( "green-border" ).addClass( "red-border" );
 			$('.ur-pass').fadeIn(); 
@@ -102,10 +105,69 @@ $(document).ready(function () {
 		}
 	});
   
-
 	
-
-
-
-
+	// listings must have a title
+	$( "#listing_title" ).blur(function() {
+		var title = $( "#listing_title" ).val();
+		var title_count = title.length;
+		if(title_count != 0){
+			$( "#listing_title" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.title-error').hide(); 
+		} else {
+			$( "#listing_title" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.title-error').fadeIn(); 
+		}
+	});
+	
+	// listing price can be empty, or a number, but not text
+	$( "#listing_price" ).blur(function() {
+		var price = $( "#listing_price" ).val();
+		if($.isNumeric(price)){
+			$( "#listing_price" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.price-error').hide(); 
+		} else if(price.length == 0) {
+			$( "#listing_price" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.price-error').hide();
+	} else {
+			$( "#listing_price" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.price-error').fadeIn(); 
+		}
+	});
+	
+	// listing content of >=15 characters
+	$( "#listing-content" ).blur(function() {
+		var content = $( "#listing-content" ).val();
+		var content_count = content.length;
+		if(content_count >= 15){
+			$( "#listing-content" ).removeClass( "red-border" ).addClass( "green-border" );
+			$('.content-error').hide(); 
+		} else {
+			$( "#listing-content" ).removeClass( "green-border" ).addClass( "red-border" );
+			$('.content-error').fadeIn(); 
+		}
+	});
+	
+	
+	// on sucussful post, remove boarders & any error messages. Display a nice post-success message
+	
+	
+	$( "#post-submit" ).click(function() {
+		var post_test = $( "#listing_title" ).hasClass( "green-border" ) && $( "#listing_price" ).hasClass( "green-border" ) && $( "#listing-content" ).hasClass( "green-border" );
+		console.log(post_test)
+		if(post_test == false){
+			console.log('form error message')
+		} else {
+			$( "#listing_title" ).removeClass( "red-border" ).removeClass( "green-border" );
+			$('.title-error').hide(); 
+			
+			$( "#listing_price" ).removeClass( "red-border" ).removeClass( "green-border" );
+			$('.price-error').hide();
+			
+			$( "#listing-content" ).removeClass( "red-border" ).removeClass( "green-border" );
+			$('.content-error').hide(); 
+		}
+		
+	});
+	
+	
 });

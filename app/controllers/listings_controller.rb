@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
    def create
     @listing = current_user.listings.build(listing_params)
     if @listing.save
-      flash[:success] = "Listing created!"
+
       respond_to do |format|
         format.html { redirect_to root_url }
         format.js
@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing.destroy
-    flash[:success] = "Listing deleted"
+
     
     respond_to do |format|
       format.html { redirect_to request.referrer || root_url}
@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
-      flash[:success] = "Profile updated"
+
       @feed_items = Listing.paginate(page: params[:page])
       respond_to do |format|
         format.html { redirect_to @listing }
