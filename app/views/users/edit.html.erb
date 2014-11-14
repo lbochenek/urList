@@ -1,7 +1,7 @@
 <% provide(:title, "Edit user") %>
 <h1 class="page-head">Update your profile</h1>
 
-  <%= render "form" %>
+  <%= render partial: 'users/form' %>
   
   
 	<% if current_user?(@user) %>

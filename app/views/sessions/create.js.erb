@@ -1,0 +1,6 @@
+$(document).ready(function() {
+  console.log("loggedin");
+  $("#header").replaceWith("<%= j(render(partial: 'layouts/header')) %>");
+  $("#categories").replaceWith("<%= j(render(partial: 'layouts/categories')) %>");
+  $("#userlogin").replaceWith("<%= j(render(partial: 'users/show_part', locals: { user: @user, lisings: @listings })) %>");
+});  

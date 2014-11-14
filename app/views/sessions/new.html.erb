@@ -1,10 +1,11 @@
 <% provide(:title, "Log in") %>
+<div id="userlogin">
 <h1 class="page-head">Log in</h1>
 <br>
 
   <% if(logged_out?)%>
     <div id = "sign-up">
-      <%= form_for(:session, url: login_path) do |f| %>
+      <%= form_for(:session, url: login_path, remote: true) do |f| %>
 
         <%= f.label :email, "Email", class: "field-text" %>
         <%= f.text_field :email %>
@@ -23,4 +24,5 @@
 			<p>You're already logged in!</p>
 			
   <%end%>
+</div>  
     
