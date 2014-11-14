@@ -8,24 +8,22 @@
     <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
+    <%= render partial: 'layouts/shim' %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
+    <%= render partial: 'layouts/header' %>
     <div id="categories">
-      <%= render 'layouts/categories' %>
+      <%= render partial: 'layouts/categories' %>
     </div>
     <div id="application">    
-      <div>
         <% flash.each do |message_type, message| %>
           <%= message %>
         <% end %>
       
         <%= yield %>
+    </div>    
         <!-- <%= render 'layouts/footer' %> -->
         <%= debug(params) if Rails.env.test? %>
-      </div>
-    </div>
   </body>
 </html>
 

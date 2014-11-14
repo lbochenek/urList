@@ -1,22 +1,3 @@
 <% provide(:title, @user.lName) %>
-<div>
-  <aside>
-      <h1 class="welcome">
-        <%= @user.fName %> <%= @user.lName%>
-      </h1>
-  
-  </aside>
-	
-	<div>
-	  <% if @user.listings.any? %>
-	    <h3>Listings (<%= @user.listings.count %>)</h3>
-	    <ol class="listings">
-	      <%= render @listings %>
-	    </ol>
-      
-      <div class="paginate">
-	      <%= will_paginate @listings %>
-      </div>  
-	  <% end %>
-	</div>
-</div>
+
+	<%= render partial: 'users/show_part', locals: { user: @user, listings: @listings } %>
