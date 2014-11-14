@@ -5,6 +5,8 @@
   
   
 	<% if current_user?(@user) %>
-	    <%= link_to "Delete Account", @user, class: "delete", method: :delete,
-	                                  data: { confirm: "Are you sure?" } %>
+	    <%= link_to "Delete Account", @user, remote: true, 
+                                           class: "delete", 
+                                           method: :delete,
+	                                         data: { confirm: "Are you sure?" } %>
 	<% end %>
