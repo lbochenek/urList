@@ -9,7 +9,7 @@ console.log("application.js loaded");
 // all code waits for the page to load
 $(document).ready(function () {	
   
-	// hide error messages by default
+	// hide error / account messages by default
 	$('.ur-fname').hide(); 
 	$('.ur-lname').hide(); 
 	$('.ur-email').hide(); 
@@ -19,7 +19,10 @@ $(document).ready(function () {
 	$('.ur-conf').hide();
 	$('.title-error').hide();
 	$('.price-error').hide();
-	$('.content-error').hide(); 
+	$('.content-error').hide();
+	$('.delete-account').hide();
+	$("#temp-header").hide();
+	 
 	
 	// first name cannot be blank
 	$( "#user_fName" ).blur(function() {

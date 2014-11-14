@@ -4,7 +4,10 @@ $(document).ready(function() {
   $(function() {
     return $("a[data-remote]").on("ajax:success", function(e, data, status, xhr) {
       $("#categories").hide();
-      $("#application").replaceWith("success");
+      $("#application").hide();
+			$( ".delete-account" ).toggle();
+			$("#header").hide();
+			$("#temp-header").show();
      });
    });
 }); 

@@ -12,6 +12,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
+		
     <div id="categories">
       <%= render 'layouts/categories' %>
     </div>
@@ -22,10 +23,12 @@
         <% end %>
       
         <%= yield %>
+				
         <!-- <%= render 'layouts/footer' %> -->
         <%= debug(params) if Rails.env.test? %>
       </div>
     </div>
+		
   </body>
 </html>
 
