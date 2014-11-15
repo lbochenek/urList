@@ -6,8 +6,9 @@ $(document).ready(function() {
       $("#categories").hide();
       $("#application").hide();
 			$( ".delete-account" ).toggle();
-			$("#header").hide();
-			$("#temp-header").show();
+      // $("#header").hide();
+      // $("#temp-header").show();
+      $("#header").replaceWith("<%= j(render(partial: 'layouts/temp_header')) %>");
      });
    });
 }); 

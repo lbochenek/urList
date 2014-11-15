@@ -1,7 +1,7 @@
 <div id = "sign-up">
   <%= form_for(@user) do |f| %>
     <div class="alert-message">
-			<%= render partial: 'shared/error_messages', object: f.object %>
+			<%= render 'shared/error_messages', object: f.object %>
     </div>
 
     <%= f.label :fName, "First Name", class: "field-text" %>

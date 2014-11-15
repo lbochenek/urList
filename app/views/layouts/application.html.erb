@@ -10,13 +10,8 @@
     <%= csrf_meta_tags %>
     <%= render partial: 'layouts/shim' %>
   </head>
-  <body>
-<<<<<<< HEAD
-    <%= render 'layouts/header' %>
-		
-=======
+  <body>		
     <%= render partial: 'layouts/header' %>
->>>>>>> account-ajax
     <div id="categories">
       <%= render partial: 'layouts/categories' %>
     </div>
@@ -26,18 +21,9 @@
         <% end %>
       
         <%= yield %>
-<<<<<<< HEAD
-				
-        <!-- <%= render 'layouts/footer' %> -->
-        <%= debug(params) if Rails.env.test? %>
-      </div>
     </div>
-		
-=======
-    </div>    
         <!-- <%= render 'layouts/footer' %> -->
         <%= debug(params) if Rails.env.test? %>
->>>>>>> account-ajax
   </body>
 </html>
 
