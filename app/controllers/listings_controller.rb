@@ -27,7 +27,6 @@ class ListingsController < ApplicationController
   def destroy
     @listing.destroy
 
-    
     respond_to do |format|
       format.html { redirect_to request.referrer || root_url}
       format.js
