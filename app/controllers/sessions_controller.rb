@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   
   def new
+    respond_to do |format|
+      format.html { redirect_back_or user }
+      format.js
+    end  
   end  
   
   def create
@@ -24,7 +28,11 @@ class SessionsController < ApplicationController
   
   def destroy
     log_out if logged_in?
-    redirect_to root_url
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end  
+    # redirect_to root_url
   end
 
     

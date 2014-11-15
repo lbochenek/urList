@@ -13,14 +13,23 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end  
   end
   
   def create
       @user = User.new(user_params)
+      @listings =  @user.listings.paginate(page: params[:page])
       if @user.save
         log_in @user
-        flash[:success] = "Welcome!"
-        redirect_to @user
+        # flash[:success] = "Welcome!"
+        respond_to do |format|
+          format.html { redirect_to @user }
+          format.js
+        end  
+        # redirect_to @user
       else
         render 'new'
       end
@@ -28,13 +37,22 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end  
   end
   
   def update
     @user = User.find(params[:id])
+    @listings =  @user.listings.paginate(page: params[:page])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
+      # flash[:success] = "Profile updated"
+      respond_to do |format|
+        format.html { redirect_to @user }
+        format.js
+      end  
+      # redirect_to @user
     else
       render 'edit'
     end

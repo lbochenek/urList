@@ -1,0 +1,5 @@
+$(document).ready(function() {
+  $("#header").replaceWith("<%= j(render(partial: 'layouts/header')) %>");
+  $("#categories").replaceWith("<%= j(render(partial: 'layouts/categories')) %>");
+  $("#application").replaceWith("<%= j(render(partial: 'static_pages/home_part')) %>");
+}); 
