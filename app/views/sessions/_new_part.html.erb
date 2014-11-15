@@ -1,0 +1,26 @@
+<div id="userlogin">
+<h1 class="page-head">Log in</h1>
+<br>
+
+  <% if(logged_out?)%>
+    <div id = "sign-up">
+      <%= form_for(:session, url: login_path, remote: true) do |f| %>
+
+        <%= f.label :email, "Email", class: "field-text" %>
+        <%= f.text_field :email %>
+        <br>
+    
+        <%= f.label :password, "Password", class: "field-text" %>
+        <%= f.password_field :password %>
+        <br>
+    
+        <%= f.submit "Log in", class: "account-submit" %>
+        <% end %>
+
+      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    </div>  
+  <% else%>
+			<p>You're already logged in!</p>
+  <%end%>
+  
+</div>  

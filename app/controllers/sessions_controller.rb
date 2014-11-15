@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   
   def new
+    respond_to do |format|
+      format.html { redirect_back_or user }
+      format.js
+    end  
   end  
   
   def create

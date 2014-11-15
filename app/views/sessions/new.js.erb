@@ -1,0 +1,4 @@
+$(document).ready(function() {
+  $("#categories").replaceWith("<%= j(render(partial: 'layouts/categories')) %>");
+  $("#home_logged_out").replaceWith("<%= j(render(partial: 'sessions/new_part')) %>");
+}); 
