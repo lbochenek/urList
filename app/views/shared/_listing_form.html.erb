@@ -23,10 +23,13 @@
 
 </div>
 <!-- SEARCH BAR HERE-->
-<form id="live-search" action="" class="styled" method="post">
+<form id="live-search" action="" class="search-bar" method="post">
     <fieldset>
-        <input type="text" class="text-input" id="filter" value="" placeholder="Search listings..." />
+        <input type="text" class="text-input" id="filter" value="" placeholder="Type to search listings..." />
         <span id="filter-count"></span>
     </fieldset>
 		<input type="reset" value="Clear Search" id="clear">
 	</form>
+	
+  <%= render partial: 'layouts/categories' %>
+	
