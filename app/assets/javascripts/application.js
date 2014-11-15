@@ -169,8 +169,38 @@ $(document).ready(function () {
 			$( "#listing-content" ).removeClass( "red-border" ).removeClass( "green-border" );
 			$('.content-error').hide(); 
 		}
-		
 	});
 	
+	// jQuery search bar
+	//http://www.designchemical.com/blog/index.php/jquery/live-text-search-function-using-jquery/
+	
+	$("#filter").keyup(function(){
+ 
+		var filter = $(this).val();
+ 
+		$(".listing-link").each(function(){
+ 
+			if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+	                $(this).fadeOut();
+ 
+								} else {
+	                $(this).show();
+	            }
+	        });
+ 
+	    });
+	// disable serach submit via enter key
+			$("#live-search").keypress(function(e) {
+			  if (e.which == 13) {
+			    return false;
+			  }
+			});
+	// show all on clear
+			$("#clear").click(function(){
+				console.log('clear clicked');
+				$(".listing-link").each(function(){
+					$(this).show();
+				});
+			});
 	
 });
