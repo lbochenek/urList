@@ -1,4 +1,5 @@
-	<% if logged_out? %>
+<div id="application">	
+  <% if logged_out? %>
     <div id="home_logged_out">
       <%= link_to "Make an account today!", signup_path, class: "signup" %>
     </div>
@@ -15,3 +16,4 @@
 	 	  <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
 	  </div>
   <% end %>
+</div>  
