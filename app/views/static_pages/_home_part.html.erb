@@ -1,7 +1,7 @@
 <div id="application">	
   <% if logged_out? %>
     <div id="home_logged_out">
-      <%= link_to "Make an account today!", signup_path, class: "signup" %>
+      <%= link_to "Make an account today!", signup_path, class: "signup", remote: true %>
     </div>
 	<% else %>
     <div id="userInfo">  

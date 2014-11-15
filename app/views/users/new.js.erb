@@ -1,0 +1,4 @@
+$(document).ready(function() {
+  $("#categories").replaceWith("<%= j(render(partial: 'layouts/categories')) %>");
+  $("#home").replaceWith("<%= j(render(partial: 'users/new_part')) %>");
+}); 
