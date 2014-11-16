@@ -8,7 +8,12 @@ console.log("application.js loaded");
 
 // all code waits for the page to load
 $(document).ready(function () {	
-  
+  console.log("ready");
+	
+	// all code waits for ajax call to finish
+	$(document).ajaxComplete(function() {
+		console.log("ajax loaded");
+	
 	// hide error / account messages by default
 	$('.ur-fname').hide(); 
 	$('.ur-lname').hide(); 
@@ -171,6 +176,8 @@ $(document).ready(function () {
 		}
 	});
 	
+	
+	
 	// jQuery search bar
 	//http://www.designchemical.com/blog/index.php/jquery/live-text-search-function-using-jquery/
 	
@@ -203,4 +210,5 @@ $(document).ready(function () {
 				});
 			});
 	
+		});
 });
