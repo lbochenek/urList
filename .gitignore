@@ -1,3 +1,4 @@
 img
 *.log
+log/development.log
 tmp/cache/assets/development/sprockets/cffd775d018f68ce5dba1ee0d951a994
