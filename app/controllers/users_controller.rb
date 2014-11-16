@@ -31,7 +31,11 @@ class UsersController < ApplicationController
         end  
         # redirect_to @user
       else
-        render 'new'
+        # render 'new'
+        respond_to do |format|
+          format.html { render 'new' }
+          format.js { render template: "users/create_errors.js.erb" }
+        end
       end
   end
   
@@ -54,7 +58,11 @@ class UsersController < ApplicationController
       end  
       # redirect_to @user
     else
-      render 'edit'
+      # render 'edit'
+      respond_to do |format|
+        format.html { render 'edit' }
+        format.js { render template: "users/update_errors.js.erb" }
+      end
     end
   end
   
