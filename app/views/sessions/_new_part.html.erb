@@ -1,3 +1,4 @@
+<div id="home">
 <div id="userlogin">
 <h1 class="page-head">Log in</h1>
 <br>
@@ -17,10 +18,11 @@
         <%= f.submit "Log in", class: "account-submit" %>
         <% end %>
 
-      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      <p>New user? <%= link_to "Sign up now!", signup_path, remote: true %></p>
     </div>  
   <% else%>
 			<p>You're already logged in!</p>
   <%end%>
   
 </div>  
+</div>
