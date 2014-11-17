@@ -9,8 +9,10 @@ class SessionsController < ApplicationController
   
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    @user = user
-    @listings = user.listings.paginate(page: params[:page])
+    if(user)
+      @user = user
+      @listings = user.listings.paginate(page: params[:page])
+    end
     if user && user.authenticate(params[:session][:password])
       log_in user
       remember user
@@ -21,8 +23,12 @@ class SessionsController < ApplicationController
       # redirect_back_or user
     else
       # Create an error message.
-      flash.now[:danger] = 'Invalid email/password combination' 
-      render 'new'
+      # flash.now[:danger] = 'Invalid email/password combination'
+      # render 'new'
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js { render js: '$("#login_error").append("Invalid email/password combination");' }
+      end
     end
   end
   
