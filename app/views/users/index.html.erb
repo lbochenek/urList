@@ -4,7 +4,7 @@
 <ul>
   <% @users.each do |user| %>
     <li class="username">
-			<%= link_to "#{user.fName} #{user.lName}", user %>
+			<%= link_to "#{user.fName} #{user.lName}", user, remote: true%>
 			<% if current_user?(user) %>
 			    | <%= link_to "Delete my Account", user, method: :delete,
 			                                  data: { confirm: "Are you sure?" } %>
