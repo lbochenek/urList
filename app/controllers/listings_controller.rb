@@ -12,15 +12,19 @@ class ListingsController < ApplicationController
    
    def create
     @listing = current_user.listings.build(listing_params)
+    # byebug
     if @listing.save
-
       respond_to do |format|
         format.html { redirect_to root_url }
         format.js
       end
     else
       @feed_items = []
-      render 'static_pages/home'
+      respond_to do |format|
+        format.html { render 'static_pages/home' }
+        format.js { render template: "listings/create_errors.js.erb" }
+      end
+      # render 'static_pages/home'
     end
   end
 
@@ -45,7 +49,6 @@ class ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
-
       @feed_items = Listing.paginate(page: params[:page])
       respond_to do |format|
         format.html { redirect_to @listing }
@@ -53,7 +56,11 @@ class ListingsController < ApplicationController
       end
       # redirect_to @listing
     else
-      render 'edit'
+      respond_to do |format|
+        format.html { render 'edit' }
+        format.js { render template: "listings/update_errors.js.erb" }
+      end
+      # render 'edit'
     end
   end
 
