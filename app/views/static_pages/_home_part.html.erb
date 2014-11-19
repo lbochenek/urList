@@ -14,6 +14,15 @@
   
 	  <div class="listings-list">
 	    <h3 class="page-head">Listings</h3>
+			<!-- SEARCH BAR HERE-->
+			<form id="live-search" action="" class="search-bar" method="post">
+			    <fieldset>
+			        <input type="text" class="text-input" id="filter" value="" placeholder="Type to search listings..." />
+			        <span id="filter-count"></span>
+			    </fieldset>
+					<input type="reset" value="Clear Search" id="clear">
+				</form>
+			
 	 	  <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
 	  </div>
   <% end %>

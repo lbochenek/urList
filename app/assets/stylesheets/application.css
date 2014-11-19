@@ -124,6 +124,12 @@ fieldset {
   border-radius: none;
 }
 
+.listing-link {
+	padding-bottom: .5em;
+	padding-top: .5em;	
+	border-top: 1px solid black;
+}
+
 .listings-list {
 	display: table;
 	margin: 0 auto;
@@ -286,8 +292,8 @@ footer a:hover {
 	font-family: 'Exo 2';
 }
 
-.paginate {
-  padding-bottom: 3em;
+.post-input {
+	text-align: center;
 }
 
 .categories {
@@ -295,6 +301,12 @@ footer a:hover {
 	padding-top: 1em;
 
 }
+
+.green-background {
+	background-color: #00FF00;
+	transition: background-color 2s ease;
+}
+
 
 /* JS FORM STYLES =========================== */
 
@@ -306,12 +318,12 @@ footer a:hover {
   border: 2px solid red;
 }
 
-.ur-email, .ur-class, .ur-id, .ur-pass, .ur-conf, .ur-fname, .ur-lname, .title-error, .price-error, .content-error {
+.ur-email, .ur-class, .ur-id, .ur-pass, .ur-conf, .ur-fname, .ur-lname, .title-error, .price-error, .content-error, .submit-error {
 	color: red;
 	font-size: 1em;
 	font-family: 'Exo 2';
 	margin: 0 auto;
-	display: table-cell;
+	width: 50%;
 	
 }
 /*SEARCH =================*/
