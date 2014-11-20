@@ -49,13 +49,10 @@ class ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
-<<<<<<< HEAD
       @feed_items = Listing.paginate(page: params[:page])
-=======
 
       @feed_items = Listing.all
       # @feed_items = Listing.paginate(page: params[:page])
->>>>>>> Nick
       respond_to do |format|
         format.html { redirect_to @listing }
         format.js

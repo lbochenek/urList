@@ -3,30 +3,29 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update, :destroy]
       
   def index
-<<<<<<< HEAD
     @users = User.paginate(page: params[:page])
     respond_to do |format|
       format.html
       format.js
     end 
-=======
+
     @users = User.all
     # @users = User.paginate(page: params[:page])
->>>>>>> Nick
+
   end  
     
   def show
     @user = User.find(params[:id])
-<<<<<<< HEAD
+
     @listings = @user.listings.paginate(page: params[:page])
     respond_to do |format|
       format.html
       format.js
     end 
-=======
+
     @listings = @user.listings.all
     # @listings = @user.listings.paginate(page: params[:page])
->>>>>>> Nick
+
   end
   
   def new

@@ -9,16 +9,16 @@ class SessionsController < ApplicationController
   
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-<<<<<<< HEAD
+
     if(user)
       @user = user
       @listings = user.listings.paginate(page: params[:page])
     end
-=======
+
     @user = user
     @listings = user.listings.all
     # @listings = user.listings.paginate(page: params[:page])
->>>>>>> Nick
+
     if user && user.authenticate(params[:session][:password])
       log_in user
       remember user
