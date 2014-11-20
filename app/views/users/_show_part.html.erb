@@ -1,20 +1,16 @@
 <div id="application">
 <div id="show-part">
-  <aside>
-      <h1 class="welcome">
+
+<div id='profile-feed'>
+      <h1 class=''>
         <%= @user.fName %> <%= @user.lName%>
       </h1>
 			<h2>Class of <%= @user.classYr %></h2>
-			<h3><%= @user.listings.count %> Listings</h3>
-  </aside>
-	
-	<div>
+			<!-- <h3><%= @user.listings.count %> Listings</h3> -->
 	  <% if @user.listings.any? %>
-	    <ol class="listings">
+	    <ol class="list">
 	      <%= render @listings %>
 	    </ol>
-      
- 
 	  <% end %>
 	</div>
 </div>

@@ -314,6 +314,10 @@ footer a:hover {
 	width: 50%;
 }
 
+#profile-feed {
+	margin: 0 auto;
+	width: 20%;
+}
 
 /* JS FORM STYLES =========================== */
 
@@ -345,4 +349,13 @@ footer a:hover {
 #clear {
 	max-width: 250px;
 }
+
+
+/*MOBILE STYLES ============*/
+@media only screen and (max-device-width: 480px) {
+	
+
+
+
+	}
 
