@@ -307,6 +307,13 @@ footer a:hover {
 	transition: background-color 2s ease;
 }
 
+#create-listing_error {
+	font-family: 'Exo 2';
+	color: red;
+	margin: 0 auto;
+	width: 50%;
+}
+
 
 /* JS FORM STYLES =========================== */
 
