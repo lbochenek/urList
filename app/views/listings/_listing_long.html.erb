@@ -13,7 +13,8 @@
                                                  class: "inline-delete", 
                                                  method: :delete,
 		                                             data: { confirm: "Are you sure?" } %>
-		<% end %>
-  </span>
+		      <% end %>
+  </span><br><br>
+  <span class="listing-email">Interested? Email  <%= mail_to listing.user.email, listing.user.fName, subject: "urList: #{listing.title}"%> </span>
 </li>
 </div id="application">
