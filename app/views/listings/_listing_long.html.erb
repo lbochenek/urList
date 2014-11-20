@@ -5,6 +5,7 @@
 	  <span class="listing-price">for $<%= price(listing) %></span><br><br>
     <span class="listing-type"><%= listing.type.category %></span><br><br>
 	  <span class="listing-content"><%= listing.content %></span><br><br>
+    <span class="listing-picture"><%= image_tag listing.picture.url if listing.picture? %></span><br><br>
     <span class="timestamp">
       Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user %>
 		  <% if current_user?(listing.user) %>

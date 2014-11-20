@@ -1,7 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree
+//= require jquery.remotipart
 
+//used http://www.sitepoint.com/asynchronous-file-uploads-rails/ to learn how to use remotipart
 
 // test js link
 console.log("application.js loaded");

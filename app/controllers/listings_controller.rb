@@ -12,12 +12,12 @@ class ListingsController < ApplicationController
    
    def create
     @listing = current_user.listings.build(listing_params)
-    # byebug
     if @listing.save
       respond_to do |format|
         format.html { redirect_to root_url }
         format.js
       end
+      # redirect_to root_url
     else
       @feed_items = []
       respond_to do |format|
@@ -70,7 +70,7 @@ class ListingsController < ApplicationController
     private
 
       def listing_params
-        params.require(:listing).permit(:title, :content, :price, :type_id)
+        params.require(:listing).permit(:title, :content, :price, :type_id, :picture)
       end
 
       def correct_user
