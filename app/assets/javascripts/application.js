@@ -8,7 +8,7 @@ console.log("application.js loaded");
 
 // all code waits for the page to load
 $(document).ready(function () {	
-  
+	
 	// hide error / account messages by default
 	$('.ur-fname').hide(); 
 	$('.ur-lname').hide(); 
@@ -22,7 +22,26 @@ $(document).ready(function () {
 	$('.content-error').hide();
 	$('.delete-account').hide();
 	$("#temp-header").hide();
-	 
+	$('.submit-error').hide();
+
+
+	// all code waits for ajax call to finish
+	$(document).ajaxComplete(function() {
+		// hide error / account messages by default
+		$('.ur-fname').hide(); 
+		$('.ur-lname').hide(); 
+		$('.ur-email').hide(); 
+		$('.ur-id').hide(); 
+		$('.ur-class').hide();
+		$('.ur-pass').hide(); 
+		$('.ur-conf').hide();
+		$('.title-error').hide();
+		$('.price-error').hide();
+		$('.content-error').hide();
+		$('.delete-account').hide();
+		$("#temp-header").hide();
+		$('.submit-error').hide();
+	
 	
 	// first name cannot be blank
 	$( "#user_fName" ).blur(function() {
@@ -107,10 +126,15 @@ $(document).ready(function () {
 			$('.ur-conf').fadeIn();
 		}
 	});
+		});
+
   
 	
+	
+// // all code waits for ajax call to finish
+// $(document).ajaxComplete(function() {
 	// listings must have a title
-	$( "#listing_title" ).blur(function() {
+	$( "#listing_title" ).keyup(function() {
 		var title = $( "#listing_title" ).val();
 		var title_count = title.length;
 		if(title_count != 0){
@@ -123,7 +147,7 @@ $(document).ready(function () {
 	});
 	
 	// listing price can be empty, or a number, but not text
-	$( "#listing_price" ).blur(function() {
+	$( "#listing_price" ).keyup(function() {
 		var price = $( "#listing_price" ).val();
 		if($.isNumeric(price)){
 			$( "#listing_price" ).removeClass( "red-border" ).addClass( "green-border" );
@@ -138,7 +162,7 @@ $(document).ready(function () {
 	});
 	
 	// listing content of >=15 characters
-	$( "#listing-content" ).blur(function() {
+	$( "#listing-content" ).keyup(function() {
 		var content = $( "#listing-content" ).val();
 		var content_count = content.length;
 		if(content_count >= 15){
@@ -156,10 +180,13 @@ $(document).ready(function () {
 	
 	$( "#post-submit" ).click(function() {
 		var post_test = $( "#listing_title" ).hasClass( "green-border" ) && $( "#listing_price" ).hasClass( "green-border" ) && $( "#listing-content" ).hasClass( "green-border" );
-		console.log(post_test)
+		console.log(post_test);
 		if(post_test == false){
-			console.log('form error message')
+			console.log('form error message');
+			$('.submit-error').fadeIn();
 		} else {
+			$('.submit-error').hide();
+			
 			$( "#listing_title" ).removeClass( "red-border" ).removeClass( "green-border" );
 			$('.title-error').hide(); 
 			
@@ -170,6 +197,9 @@ $(document).ready(function () {
 			$('.content-error').hide(); 
 		}
 	});
+// });
+	
+	
 	
 	// jQuery search bar
 	//http://www.designchemical.com/blog/index.php/jquery/live-text-search-function-using-jquery/
@@ -203,4 +233,5 @@ $(document).ready(function () {
 				});
 			});
 	
+		
 });

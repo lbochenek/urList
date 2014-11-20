@@ -8,15 +8,24 @@ class UsersController < ApplicationController
       format.html
       format.js
     end 
+
+    @users = User.all
+    # @users = User.paginate(page: params[:page])
+
   end  
     
   def show
     @user = User.find(params[:id])
+
     @listings = @user.listings.paginate(page: params[:page])
     respond_to do |format|
       format.html
       format.js
     end 
+
+    @listings = @user.listings.all
+    # @listings = @user.listings.paginate(page: params[:page])
+
   end
   
   def new
@@ -29,7 +38,8 @@ class UsersController < ApplicationController
   
   def create
       @user = User.new(user_params)
-      @listings =  @user.listings.paginate(page: params[:page])
+      @listings =  @user.listings.all
+      # @listings =  @user.listings.paginate(page: params[:page])
       if @user.save
         log_in @user
         # flash[:success] = "Welcome!"
@@ -57,7 +67,8 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    @listings =  @user.listings.paginate(page: params[:page])
+    @listings =  @user.listings.all
+    # @listings =  @user.listings.paginate(page: params[:page])
     if @user.update_attributes(user_params)
       # flash[:success] = "Profile updated"
       respond_to do |format|
