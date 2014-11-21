@@ -49,8 +49,6 @@ class ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
-      @feed_items = Listing.paginate(page: params[:page])
-
       @feed_items = Listing.all
       # @feed_items = Listing.paginate(page: params[:page])
       respond_to do |format|

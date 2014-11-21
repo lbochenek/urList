@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
     @user = user
     @listings = user.listings.all
+    @solds = user.solds.all
     # @listings = user.listings.paginate(page: params[:page])
 
     if user && user.authenticate(params[:session][:password])

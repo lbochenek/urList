@@ -1,5 +1,4 @@
-class Listing < ActiveRecord::Base
-  # has_many :listings
+class Sold < ActiveRecord::Base
   belongs_to :user
   belongs_to :type
   default_scope -> { order('created_at DESC') }
@@ -11,9 +10,9 @@ class Listing < ActiveRecord::Base
   validate :picture_size
       
   def picture_size
-    if picture.size > 1.megabytes
-      errors.add(:picture, "should be less than 1MB")
+    if picture.size > 5.megabytes
+      errors.add(:picture, "should be less than 5MB")
     end
   end
-
+  
 end
