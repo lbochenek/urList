@@ -1,53 +1,49 @@
 <div id="post-form">
   
-<div id="create-listing_error"></div>  
+  <div id="create-listing_error"></div>  
 
-<!-- <%= form_for(@listing, remote: true) do |f| %> -->
-<%= form_for(@listing, html: { multipart: true }, remote: true) do |f| %>
-<!-- <%= form_for(@listing, html: { multipart: true }) do |f| %> -->
-  <%= render 'shared/error_messages', object: f.object %>
+    <%= form_for(@listing, html: { multipart: true }, remote: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
 
-  <div class="post-input">
-		<h3 class="page-head">Make a new listing!</h3>
-    <%= f.text_field :title, placeholder: "What are you selling?", class: "field-text" %>
-		<br><span class="title-error"> Please enter a title! </span><br><br>
+      <div class="post-input">
+		    <h3 class="page-head">Make a new listing!</h3>
+        <%= f.text_field :title, placeholder: "What are you selling?", class: "field-text" %>
+		    <br><span class="title-error"> Please enter a title! </span><br><br>
 		
-		<%= f.text_field :price, placeholder: "How much $ ?", class: "field-text"%> 
-		<br><span class="price-error"> Price must be a number, or left blank. No symbols! </span><br><br>
+		    <%= f.text_field :price, placeholder: "How much $ ?", class: "field-text"%> 
+		    <br><span class="price-error"> Price must be a number, or left blank. No symbols! </span><br><br>
 		
-		<%= f.text_area :content, placeholder: "Briefly describe what you're selling...", id: "listing-content"%> 
-		<br><span class="content-error"> Please enter at least 15 characters </span><br><br>
-		<span class="field-text"> Pick a category </span>
-		<%= f.collection_select :type_id, Type.all, :id, :category %>
-		<br>
+		    <%= f.text_area :content, placeholder: "Briefly describe what you're selling...", id: "listing-content"%> 
+		    <br><span class="content-error"> Please enter at least 15 characters </span><br><br>
+		    <span class="field-text"> Pick a category </span>
+		    <%= f.collection_select :type_id, Type.all, :id, :category %>
+		    <br>
     
-    <span class="picture">
-       <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
-    </span>
-     
+        <span class="picture">
+          <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
+        </span>
  
-  <%= f.submit "Post", class: "post", id: "post-submit"%>
-	<br>
-	<span class="submit-error">Please fix errors before posting!</span>
-	 </div>
-<% end %>
+        <%= f.submit "Post", class: "post", id: "post-submit"%>
+	      <br>
+	      <span class="submit-error">Please fix errors before posting!</span>
+	    </div>
+    <% end %>
 
-<!--script code from https://www.railstutorial.org/book/user_microposts -->
-<script type="text/javascript">
-  $('#listing_picture').bind('change', function() {
-    size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
-</script>
+    <!--script code from https://www.railstutorial.org/book/user_microposts -->
+    <script type="text/javascript">
+      $('#listing_picture').bind('change', function() {
+        size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 1) {
+          alert('Maximum file size is 1MB. Please choose a smaller file.');
+        }
+      });
+    </script>
 
-</div>
-
+  </div>
 	
   <%= render partial: 'layouts/categories' %>
   
-<!-- <%end%> -->
-<!-- <%end%> -->
+</div>  
+
 
 	
