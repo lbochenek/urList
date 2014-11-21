@@ -12,8 +12,12 @@
 	    <%= render partial: 'shared/listing_form' %>
 	  </div>
   
-	  <div class="listings-list">
-	    <h3 class="page-head">Listings</h3>
+	<h3 class="page-head">Listings</h3>
+	
+	  <div class="categories"><%= render partial: 'layouts/categories' %></div>
+		
+		
+
 			<!-- SEARCH BAR HERE-->
 			<form id="live-search" action="" class="search-bar" method="post">
 			    <fieldset>
@@ -22,7 +26,9 @@
 			    </fieldset>
 					<input type="reset" value="Clear Search" id="clear">
 				</form>
-			
+				
+				
+			<div class="listings-list">
 	 	  <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
 	  </div>
   <% end %>

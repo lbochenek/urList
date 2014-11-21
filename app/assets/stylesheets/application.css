@@ -319,6 +319,17 @@ footer a:hover {
 	width: 20%;
 }
 
+li.listing {
+	list-style: none;
+	width: 20%;
+	margin: 0 auto;
+}
+
+.categories {
+
+	
+}
+
 /* JS FORM STYLES =========================== */
 
 .green-border {
