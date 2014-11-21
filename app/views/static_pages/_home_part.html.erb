@@ -26,9 +26,12 @@
 			    </fieldset>
 					<input type="reset" value="Clear Search" id="clear">
 				</form>
+				<span class="no-results">Sorry, no listings match your search term.</span>
+
 				
 				
 			<div class="listings-list">
+						
 	 	  <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
 	  </div>
   <% end %>

@@ -340,12 +340,13 @@ li.listing {
   border: 2px solid red;
 }
 
-.ur-email, .ur-class, .ur-id, .ur-pass, .ur-conf, .ur-fname, .ur-lname, .title-error, .price-error, .content-error, .submit-error {
+.ur-email, .ur-class, .ur-id, .ur-pass, .ur-conf, .ur-fname, .ur-lname, .title-error, .price-error, .content-error, .submit-error, .no-results {
 	color: red;
 	font-size: 1em;
 	font-family: 'Exo 2';
 	margin: 0 auto;
 	width: 50%;
+	text-align: center;
 	
 }
 /*SEARCH =================*/
