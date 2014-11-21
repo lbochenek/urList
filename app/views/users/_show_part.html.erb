@@ -1,21 +1,26 @@
 <div id="application">
-<div id="show-part">
-  <aside>
+  <div id="show-part">
+    <aside>
       <h1 class="welcome">
         <%= @user.fName %> <%= @user.lName%>
       </h1>
 			<h2>Class of <%= @user.classYr %></h2>
 			<h3><%= @user.listings.count %> Listings</h3>
-  </aside>
-	
-	<div>
-	  <% if @user.listings.any? %>
+    </aside>
+	  
+    <% if @user.listings.any? %>
 	    <ol class="listings">
 	      <%= render @listings %>
-	    </ol>
-      
- 
+	    </ol> 
 	  <% end %>
-	</div>
-</div>
+   
+    <% if current_user?(@user) %>
+      <h3><%= @user.solds.count %> Sold Listings</h3>
+      <% if @user.solds.any? %>
+        <ol class="listings">
+          <%= render @solds%>
+        </ol>  
+      <% end %>
+    <% end %>
+  </div>
 </div>
