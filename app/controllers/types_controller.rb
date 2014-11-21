@@ -5,7 +5,7 @@ class TypesController < ApplicationController
     # @listings = @type.listings.paginate(page: params[:page])
     
     respond_to do |format|
-      format.html
+      # format.html
       format.js
     end  
   end

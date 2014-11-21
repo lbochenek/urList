@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     respond_to do |format|
-      format.html
+      # format.html
       format.js
     end  
   end  
@@ -14,14 +14,14 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.build(listing_params)
     if @listing.save
       respond_to do |format|
-        format.html { redirect_to root_url }
+        # format.html { redirect_to root_url }
         format.js
       end
       # redirect_to root_url
     else
       @feed_items = []
       respond_to do |format|
-        format.html { render 'static_pages/home' }
+        # format.html { render 'static_pages/home' }
         format.js { render template: "listings/create_errors.js.erb" }
       end
       # render 'static_pages/home'
@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
     @listing.destroy
 
     respond_to do |format|
-      format.html { redirect_to request.referrer || root_url}
+      # format.html { redirect_to request.referrer || root_url}
       format.js
     end  
     # redirect_to request.referrer || root_url
@@ -41,7 +41,7 @@ class ListingsController < ApplicationController
   def edit
     @listing = Listing.find(params[:id])
     respond_to do |format|
-      format.html
+      # format.html
       format.js
     end
   end
@@ -52,13 +52,13 @@ class ListingsController < ApplicationController
       @feed_items = Listing.all
       # @feed_items = Listing.paginate(page: params[:page])
       respond_to do |format|
-        format.html { redirect_to @listing }
+        # format.html { redirect_to @listing }
         format.js
       end
       # redirect_to @listing
     else
       respond_to do |format|
-        format.html { render 'edit' }
+        # format.html { render 'edit' }
         format.js { render template: "listings/update_errors.js.erb" }
       end
       # render 'edit'

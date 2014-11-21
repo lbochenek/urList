@@ -5,16 +5,17 @@ class SoldsController < ApplicationController
     @listings = @user.listings.all
     @solds = @user.solds.all
     @soldlisting = current_user.solds.build(title:@listing.title, content:@listing.content, price:@listing.price, user:@listing.user, type:@listing.type, picture:@listing.picture)
+    @soldlisting.created_at = @listing.created_at
     if @soldlisting.save
       respond_to do |format|
-        format.html { redirect_to root_url }
+        # format.html { redirect_to root_url }
         format.js
       end
       @listing.destroy
      # redirect_to root_url
     else
       respond_to do |format|
-        format.html { render 'static_pages/home' }
+        # format.html { render 'static_pages/home' }
         format.js { render template: "solds/sold_listing_errors.js.erb" }
       end
       # render 'static_pages/home'
@@ -24,7 +25,7 @@ class SoldsController < ApplicationController
   def show
     @sold = Sold.find(params[:id])
     respond_to do |format|
-      format.html 
+      # format.html
       format.js
     end
   end    
