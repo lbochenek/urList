@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   
   def new
     respond_to do |format|
-      format.html
+      # format.html
       format.js
     end  
   end  
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
       log_in user
       remember user
       respond_to do |format|
-        format.html { redirect_back_or user }
+        # format.html { redirect_back_or user }
         format.js
       end
       # redirect_back_or user
@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
       # flash.now[:danger] = 'Invalid email/password combination'
       # render 'new'
       respond_to do |format|
-        format.html { render 'new' }
+        # format.html { render 'new' }
         format.js { render js: '$("#login_error").append("Invalid email/password combination");' }
       end
     end
@@ -42,7 +42,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out if logged_in?
     respond_to do |format|
-      format.html { redirect_to root_url }
+      # format.html { redirect_to root_url }
       format.js
     end  
     # redirect_to root_url
