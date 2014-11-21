@@ -314,6 +314,21 @@ footer a:hover {
 	width: 50%;
 }
 
+#profile-feed {
+	margin: 0 auto;
+	width: 20%;
+}
+
+li.listing {
+	list-style: none;
+	width: 20%;
+	margin: 0 auto;
+}
+
+.categories {
+
+	
+}
 
 /* JS FORM STYLES =========================== */
 
@@ -325,12 +340,13 @@ footer a:hover {
   border: 2px solid red;
 }
 
-.ur-email, .ur-class, .ur-id, .ur-pass, .ur-conf, .ur-fname, .ur-lname, .title-error, .price-error, .content-error, .submit-error {
+.ur-email, .ur-class, .ur-id, .ur-pass, .ur-conf, .ur-fname, .ur-lname, .title-error, .price-error, .content-error, .submit-error, .no-results {
 	color: red;
 	font-size: 1em;
 	font-family: 'Exo 2';
 	margin: 0 auto;
 	width: 50%;
+	text-align: center;
 	
 }
 /*SEARCH =================*/
@@ -345,4 +361,13 @@ footer a:hover {
 #clear {
 	max-width: 250px;
 }
+
+
+/*MOBILE STYLES ============*/
+@media only screen and (max-device-width: 480px) {
+	
+
+
+
+	}
 

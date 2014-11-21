@@ -25,6 +25,7 @@ $(document).ready(function () {
 	$('.delete-account').hide();
 	$("#temp-header").hide();
 	$('.submit-error').hide();
+	$('.no-results').hide();
 
 
 	// all code waits for ajax call to finish
@@ -43,6 +44,7 @@ $(document).ready(function () {
 		$('.delete-account').hide();
 		$("#temp-header").hide();
 		$('.submit-error').hide();
+		$('.no-results').hide();
 	
 	
 	// first name cannot be blank
@@ -208,7 +210,7 @@ $(document).ready(function () {
 	
 	$("#filter").keyup(function(){
  
-		var filter = $(this).val();
+		var filter = $(this).val(), count = 0;
  
 		$(".listing-link").each(function(){
  
@@ -217,10 +219,24 @@ $(document).ready(function () {
  
 								} else {
 	                $(this).show();
+									count++;
 	            }
+						
 	        });
- 
+			var listCount = count;
+			console.log(count);
+			
+			if (count == 0){
+			//put error message here
+				$('.no-results').fadeIn();
+			} else {
+				$('.no-results').hide();
+			}
 	    });
+		
+	
+			
+			
 	// disable serach submit via enter key
 			$("#live-search").keypress(function(e) {
 			  if (e.which == 13) {
