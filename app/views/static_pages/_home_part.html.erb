@@ -4,10 +4,7 @@
     <div id="home_logged_out">
       <%= link_to "Make an account today!", signup_path, class: "signup", remote: true %>
     </div>
-	<% else %>
-    <div id="userInfo">  
-		  <%= render partial: 'shared/user_info' %>
-    </div>  
+	<% else %> 
     <div id="createForm">  
 	    <h3 class="page-head">Make a new listing!</h3>
 	    <%= render partial: 'shared/listing_form' %>
