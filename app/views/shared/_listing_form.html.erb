@@ -6,7 +6,6 @@
       <%= render 'shared/error_messages', object: f.object %>
 
       <div class="post-input">
-		    <h3 class="page-head">Make a new listing!</h3>
         <%= f.text_field :title, placeholder: "What are you selling?", class: "field-text" %>
 		    <br><span class="title-error"> Please enter a title! </span><br><br>
 		
@@ -24,12 +23,13 @@
           <%= f.check_box :remove_picture %>
         </span>
  
-        <%= f.submit "Post", class: "post", id: "post-submit"%>
+        <%= f.submit "Save", class: "post", id: "post-submit"%>
 	      <br>
 	      <span class="submit-error">Please fix errors before posting!</span>
 	    </div>
     <% end %>
     
+<<<<<<< HEAD
     <!-- <% if @listing.picture? %>
       <%= button_to "Remove Picture", @listing,
                                                 remote: true,
@@ -49,6 +49,8 @@
       });
     </script>
 
+=======
+>>>>>>> master
   </div>  
 </div>  
 
