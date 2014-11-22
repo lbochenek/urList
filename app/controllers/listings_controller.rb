@@ -96,13 +96,8 @@ class ListingsController < ApplicationController
         else
           has_picture = true
         end
-<<<<<<< HEAD
       end 
-      if(has_picture) 
-=======
-      end
       if(has_picture)
->>>>>>> laura
       # if(@listing.errors.include?(:picture))
         if(has_only_picture)
           respond_to do |format|
@@ -131,12 +126,6 @@ class ListingsController < ApplicationController
       # end
     end
   end
-  
-  def remove_pic
-    @listing = Listing.find(params[:id])
-    user.remove_picture!
-    @user.save
-  end  
 
     private
 
