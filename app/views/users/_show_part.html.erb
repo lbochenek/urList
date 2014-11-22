@@ -1,22 +1,5 @@
 <div id="application">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div id="show-part">
-
-<div id='profile-feed'>
-      <h1 class=''>
-        <%= @user.fName %> <%= @user.lName%>
-      </h1>
-			<h2>Class of <%= @user.classYr %></h2>
-			<!-- <h3><%= @user.listings.count %> Listings</h3> -->
-	  <% if @user.listings.any? %>
-	    <ol class="list">
-	      <%= render @listings %>
-	    </ol>
-=======
-=======
->>>>>>> FETCH_HEAD
-  <div id="show-part">
+	<div id="show-part">
     <aside>
       <h1 class="welcome">
         <%= @user.fName %> <%= @user.lName%>
@@ -29,10 +12,6 @@
 	    <ol class="listings">
 	      <%= render @listings %>
 	    </ol> 
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
 	  <% end %>
    
     <% if current_user?(@user) %>

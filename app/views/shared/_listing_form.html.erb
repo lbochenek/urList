@@ -17,26 +17,14 @@
 		    <span class="field-text"> Pick a category </span>
 		    <%= f.collection_select :type_id, Type.all, :id, :category %>
 		    <br>
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <span class="picture">
-       <%= f.file_field :picture %>
-    </span>
+
     
 		<br>
-=======
-=======
->>>>>>> FETCH_HEAD
         <span class="picture">
           <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
           <%= f.check_box :remove_picture %>
         </span>
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
- 
+
         <%= f.submit "Save", class: "post", id: "post-submit"%>
 	      <br>
 	      <span class="submit-error">Please fix errors before posting!</span>
@@ -44,18 +32,8 @@
     <% end %>
   </div>  
 </div>  
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 </div>
 
 	
   
-<!-- <%end%> -->
-<!-- <%end%> -->
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
 
-	
