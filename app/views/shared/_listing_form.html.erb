@@ -28,29 +28,7 @@
 	      <span class="submit-error">Please fix errors before posting!</span>
 	    </div>
     <% end %>
-    
-<<<<<<< HEAD
-    <!-- <% if @listing.picture? %>
-      <%= button_to "Remove Picture", @listing,
-                                                remote: true,
-                                                action:"remove_pic",
-                                                id: @listing.id,
-                                                controller:"listings",
-                                                data: { confirm: "Are you sure?" } %>    %>
-    <% end %> -->
 
-    <!--script code from https://www.railstutorial.org/book/user_microposts -->
-    <script type="text/javascript">
-      $('#listing_picture').bind('change', function() {
-        size_in_megabytes = this.files[0].size/1024/1024;
-        if (size_in_megabytes > 1) {
-          alert('Maximum file size is 1MB. Please choose a smaller file.');
-        }
-      });
-    </script>
-
-=======
->>>>>>> master
   </div>  
 </div>  
 
