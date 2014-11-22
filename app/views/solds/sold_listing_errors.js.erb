@@ -1,0 +1,2 @@
+$("#sold_listing_error").empty();
+$("#sold_listing_error").append("<%= j(render(partial: 'shared/error_messages', locals: { object: @soldlisting })) %>");

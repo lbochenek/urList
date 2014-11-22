@@ -325,9 +325,28 @@ li.listing {
 	margin: 0 auto;
 }
 
-.categories {
+.pic-button {
+	font-size: 1em;
+	font-family: 'Exo 2';
+	display: block;
+		
+}
 
-	
+.picture {
+	width: 300px;
+	margin: 0 auto;
+}
+
+#listing_remove_picture {
+	display: inline;
+	max-width: 20px;
+}
+
+.check-remove {
+	width: 350px;
+	margin: 0 auto;
+	font-size: 1em;
+	font-family: 'Exo 2';
 }
 
 /* JS FORM STYLES =========================== */
@@ -348,8 +367,10 @@ li.listing {
 	width: 50%;
 	text-align: center;
 	display: block;
-	
 }
+
+
+
 /*SEARCH =================*/
 /*the entire search area*/
 #live-search {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120002616) do
+ActiveRecord::Schema.define(version: 20141120212221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,14 +28,31 @@ ActiveRecord::Schema.define(version: 20141120002616) do
   end
 
   add_index "listings", ["type_id"], name: "index_listings_on_type_id", using: :btree
+  add_index "listings", ["user_id", "created_at", "price", "type_id"], name: "index_listings_on_user_id_and_created_at_and_price_and_type_id", using: :btree
   add_index "listings", ["user_id", "created_at", "price"], name: "index_listings_on_user_id_and_created_at_and_price", using: :btree
   add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
+
+  create_table "solds", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.float    "price"
+    t.integer  "user_id"
+    t.integer  "type_id"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "solds", ["type_id"], name: "index_solds_on_type_id", using: :btree
+  add_index "solds", ["user_id"], name: "index_solds_on_user_id", using: :btree
 
   create_table "types", force: true do |t|
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "types", ["category"], name: "index_types_on_category", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "fName"
