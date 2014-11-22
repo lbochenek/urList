@@ -5,7 +5,11 @@
   <span class="listing-type"><%= sold.type.category %></span><br><br>
 	<span class="listing-content"><%= sold.content %></span><br><br>
   <span class="timestamp">
+<<<<<<< HEAD
     Posted <%= time_ago_in_words(sold.created_at) %> ago by <%= link_to sold.user.fName, sold.user, remote: true %>
+=======
+    Posted <%= time_ago_in_words(sold.created_at) %> ago by <%= link_to sold.user.fName, sold.user %>
+>>>>>>> picture-styling
   </span>  
 
 

@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20141120212221) do
     t.datetime "updated_at"
   end
 
+  add_index "types", ["category"], name: "index_types_on_category", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "fName"
     t.string   "lName"

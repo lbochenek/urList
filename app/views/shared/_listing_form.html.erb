@@ -17,6 +17,7 @@
 		    <span class="field-text"> Pick a category </span>
 		    <%= f.collection_select :type_id, Type.all, :id, :category %>
 		    <br>
+<<<<<<< HEAD
 
     
 		<br>
@@ -33,6 +34,28 @@
   </div>  
 </div>  
 </div>
+=======
+  
+		<br>
+
+        <span class="picture">
+          <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
+				</span><br>
+  
+					<div class="check-remove"><%= f.check_box :remove_picture %><span>Check here if you'd like to remove the picture</span></div><br>
+
+
+ 
+        <%= f.submit "Save", class: "post", id: "post-submit"%>
+	      <br>
+	      <span class="submit-error">Please fix errors before posting!</span>
+	    </div>
+    <% end %>
+    
+  </div>  
+</div>  
+
+>>>>>>> picture-styling
 
 	
   

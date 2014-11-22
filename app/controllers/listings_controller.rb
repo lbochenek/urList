@@ -20,6 +20,7 @@ class ListingsController < ApplicationController
       # redirect_to root_url
     else
       @feed_items = []
+<<<<<<< HEAD
       has_picture = false
       has_only_picture = true
       @listing.errors.each do |attribute, error|
@@ -46,6 +47,11 @@ class ListingsController < ApplicationController
           # format.html { render 'edit' }
           format.js { render template: "listings/create_errors.js.erb", locals: {listing: @listing} }
         end
+=======
+      respond_to do |format|
+        # format.html { render 'static_pages/home' }
+        format.js { render template: "listings/create_errors.js.erb" }
+>>>>>>> picture-styling
       end
       # respond_to do |format|
       #   # format.html { render 'static_pages/home' }
@@ -97,7 +103,11 @@ class ListingsController < ApplicationController
           has_picture = true
         end
       end 
+<<<<<<< HEAD
       if(has_picture)
+=======
+      if(has_picture) 
+>>>>>>> picture-styling
       # if(@listing.errors.include?(:picture))
         if(has_only_picture)
           respond_to do |format|
@@ -126,6 +136,12 @@ class ListingsController < ApplicationController
       # end
     end
   end
+  
+  def remove_pic
+    @listing = Listing.find(params[:id])
+    user.remove_picture!
+    @user.save
+  end  
 
     private
 

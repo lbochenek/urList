@@ -3,10 +3,21 @@
     <div>
       The form contains <%= pluralize(object.errors.count, "error") %>.
     </div>
+<<<<<<< HEAD
     <ul>
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %> 
     </ul>
+=======
+    <% if !(object.errors.include?(:picture)) %>  
+      <ul>
+        <% object.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %> 
+      </ul>
+    <% else %>
+    <% end %>
+>>>>>>> picture-styling
   </div>
 <% end %>
