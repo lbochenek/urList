@@ -5,7 +5,7 @@
   <span class="listing-type"><%= listing.type.category %></span><br><br>
 	<span class="listing-content"><%= listing.content %></span><br><br>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user %>
+    Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user, remote: true %>
   </span>  
 
 

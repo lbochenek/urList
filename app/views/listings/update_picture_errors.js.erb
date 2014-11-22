@@ -1,0 +1,3 @@
+$("#edit-listing_errors").empty();
+$("#edit-listing_errors").append("<%= j(render(partial: 'shared/error_messages', locals: { object: listing })) %>");
+$("#edit-listing_errors").append("<li>Invalid image type; allowed types: jpg, jpeg, gif, png</li>");

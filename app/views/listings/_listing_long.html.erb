@@ -1,19 +1,25 @@
 <div id="application">
   <li class="listing">
-
+    <div id="sold_listing_error"></div>
     <span class="listing-title"><%= listing.title %> </span>
 	  <span class="listing-price">for $<%= price(listing) %></span><br><br>
     <span class="listing-type"><%= listing.type.category %></span><br><br>
 	  <span class="listing-content"><%= listing.content %></span><br><br>
     <span class="listing-picture"><%= image_tag listing.picture.url if listing.picture? %></span><br><br>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user %>
+      Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user, remote: true %>
 		  <% if current_user?(listing.user) %>
 		      <%= link_to "Edit", edit_listing_path(listing.id), remote: true%>
           <%= link_to "delete my post", listing, remote: true, 
                                                  class: "inline-delete", 
                                                  method: :delete,
 		                                             data: { confirm: "Are you sure?" } %>
+          <%= button_to "This listing is sold", listing,
+                                                remote: true,
+                                                action:"sold_listing",
+                                                id: listing.id,
+                                                controller:"solds",
+                                                data: { confirm: "Are you sure?" } %>          
 		      <% end %>
   </span><br><br>
   <span class="listing-email">Interested? Email  <%= mail_to listing.user.email, listing.user.fName, subject: "urList: #{listing.title}"%> </span>

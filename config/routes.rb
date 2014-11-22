@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  post 'listings/:id' => 'solds#sold_listing', listing_id: :id
   resources :listings
   resources :users
   resources :types
+  resources :solds
 
 
 

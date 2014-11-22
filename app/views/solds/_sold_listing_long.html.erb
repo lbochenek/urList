@@ -1,0 +1,12 @@
+<div id="application">
+  <li class="listing">
+    <span class="listing-title"><%= sold.title %> </span>
+	  <span class="listing-price">for $<%= price(sold) %></span><br><br>
+    <span class="listing-type"><%= sold.type.category %></span><br><br>
+	  <span class="listing-content"><%= sold.content %></span><br><br>
+    <span class="listing-picture"><%= image_tag sold.picture.url if sold.picture? %></span><br><br>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(sold.created_at) %> ago by <%= link_to sold.user.fName, sold.user, remote: true %>
+    </span><br><br>
+  </li>
+</div id="application">

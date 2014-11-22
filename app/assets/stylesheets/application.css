@@ -160,12 +160,23 @@ fieldset {
   font-size: 3em;
 }
 
+.logo {
+  text-align: center;
+  font-family: 'Exo 2';
+  color: #00467f;
+  font-size: 5em;
+}
+
 .welcome {
   text-align: left;
   font-family: 'Exo 2';
   color: #00467f;
   font-size: 2em;
 	margin-left: 1em;
+}
+
+#categories {
+  text-align: center;
 }
 
 
@@ -261,26 +272,6 @@ footer {
 	border-top: 1px solid #ccc;
 	height: 3em;
 
-}
-
-footer li {
-	text-align: center;
-	list-style: none;
-	display: inline;	
-	text-decoration: none;
-	color: black;
-}
-
-footer a {
-	text-decoration: none;
-}
-
-footer a:visited {
-	color: black;
-}
-
-footer a:hover {
-	text-decoration: underline;
 }
 
 .alert-message {
