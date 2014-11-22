@@ -57,18 +57,52 @@ class ListingsController < ApplicationController
       end
       # redirect_to @listing
     else
-      respond_to do |format|
-        # format.html { render 'edit' }
-        format.js { render template: "listings/update_errors.js.erb" }
+      puts @listing.errors.full_messages
+      has_picture = false
+      has_only_picture = true
+      @listing.errors.each do |attribute, error|
+        if(attribute!=:picture)
+          has_only_picture = false
+        else
+          has_picture = true
+        end
+      end 
+      if(has_picture) 
+      # if(@listing.errors.include?(:picture))
+        if(has_only_picture)
+          respond_to do |format|
+            # format.html { render 'edit' }
+            # format.js { render template: "listings/update_errors.js.erb", locals: {listing: @listing} }
+            format.js { render js: '$("#edit-listing_errors").empty();
+                                $("#edit-listing_errors").append("Invalid image type; allowed types: jpg, jpeg, gif, png");' }
+          end
+        else
+          @listing.errors.delete(:picture)
+          respond_to do |format|
+            # format.html { render 'edit' }
+            format.js { render template: "listings/update_picture_errors.js.erb", locals: {listing: @listing} }
+          end
+        end
+      else
+        respond_to do |format|
+          # format.html { render 'edit' }
+          format.js { render template: "listings/update_errors.js.erb", locals: {listing: @listing} }
+        end
       end
       # render 'edit'
     end
   end
+  
+  def remove_pic
+    @listing = Listing.find(params[:id])
+    user.remove_picture!
+    @user.save
+  end  
 
     private
 
       def listing_params
-        params.require(:listing).permit(:title, :content, :price, :type_id, :picture)
+        params.require(:listing).permit(:title, :content, :price, :type_id, :picture, :remove_picture)
       end
 
       def correct_user
