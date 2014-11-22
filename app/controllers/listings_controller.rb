@@ -29,6 +29,9 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    @user = @listing.user
+    @listings = @user.listings.all
+    @solds = @user.solds.all
     @listing.destroy
 
     respond_to do |format|
