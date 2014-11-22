@@ -1,5 +1,6 @@
 <div id="application">	
 <div id="home">  
+  <h1 class="logo">urList</h1>
   <% if logged_out? %>
     <div id="home_logged_out">
       <%= link_to "Make an account today!", signup_path, class: "signup", remote: true %>
