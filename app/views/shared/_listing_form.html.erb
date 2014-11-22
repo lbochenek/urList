@@ -21,6 +21,7 @@
     
         <span class="picture">
           <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
+          <%= f.check_box :remove_picture %>
         </span>
  
         <%= f.submit "Post", class: "post", id: "post-submit"%>
@@ -28,6 +29,15 @@
 	      <span class="submit-error">Please fix errors before posting!</span>
 	    </div>
     <% end %>
+    
+    <!-- <% if @listing.picture? %>
+      <%= button_to "Remove Picture", @listing,
+                                                remote: true,
+                                                action:"remove_pic",
+                                                id: @listing.id,
+                                                controller:"listings",
+                                                data: { confirm: "Are you sure?" } %>    %>
+    <% end %> -->
 
     <!--script code from https://www.railstutorial.org/book/user_microposts -->
     <script type="text/javascript">
@@ -39,10 +49,7 @@
       });
     </script>
 
-  </div>
-	
-  <%= render partial: 'layouts/categories' %>
-  
+  </div>  
 </div>  
 
 
