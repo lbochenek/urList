@@ -20,10 +20,37 @@ class ListingsController < ApplicationController
       # redirect_to root_url
     else
       @feed_items = []
-      respond_to do |format|
-        # format.html { render 'static_pages/home' }
-        format.js { render template: "listings/create_errors.js.erb" }
+      has_picture = false
+      has_only_picture = true
+      @listing.errors.each do |attribute, error|
+        if(attribute!=:picture)
+          has_only_picture = false
+        else
+          has_picture = true
+        end
       end
+      if(has_picture)
+        if(has_only_picture)
+          respond_to do |format|
+            format.js { render js: '$("#create-listing_error").empty();
+                                $("#create-listing_error").append("Invalid image type; allowed types: jpg, jpeg, gif, png");' }
+          end
+        else
+          @listing.errors.delete(:picture)
+          respond_to do |format|
+            format.js { render template: "listings/create_picture_errors.js.erb", locals: {listing: @listing} }
+          end
+        end
+      else
+        respond_to do |format|
+          # format.html { render 'edit' }
+          format.js { render template: "listings/create_errors.js.erb", locals: {listing: @listing} }
+        end
+      end
+      # respond_to do |format|
+      #   # format.html { render 'static_pages/home' }
+      #   format.js { render template: "listings/create_errors.js.erb" }
+      # end
       # render 'static_pages/home'
     end
   end
@@ -69,8 +96,13 @@ class ListingsController < ApplicationController
         else
           has_picture = true
         end
+<<<<<<< HEAD
       end 
       if(has_picture) 
+=======
+      end
+      if(has_picture)
+>>>>>>> laura
       # if(@listing.errors.include?(:picture))
         if(has_only_picture)
           respond_to do |format|
@@ -93,6 +125,10 @@ class ListingsController < ApplicationController
         end
       end
       # render 'edit'
+      # respond_to do |format|
+      #   # format.html { render 'edit' }
+      #   format.js { render template: "listings/update_errors.js.erb", locals: {listing: @listing} }
+      # end
     end
   end
   

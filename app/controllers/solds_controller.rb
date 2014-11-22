@@ -7,11 +7,11 @@ class SoldsController < ApplicationController
     @soldlisting = current_user.solds.build(title:@listing.title, content:@listing.content, price:@listing.price, user:@listing.user, type:@listing.type, picture:@listing.picture)
     @soldlisting.created_at = @listing.created_at
     if @soldlisting.save
+      @listing.destroy
       respond_to do |format|
         # format.html { redirect_to root_url }
         format.js
       end
-      @listing.destroy
      # redirect_to root_url
     else
       respond_to do |format|
