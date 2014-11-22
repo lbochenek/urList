@@ -6,7 +6,6 @@
       <%= render 'shared/error_messages', object: f.object %>
 
       <div class="post-input">
-		    <h3 class="page-head">Make a new listing!</h3>
         <%= f.text_field :title, placeholder: "What are you selling?", class: "field-text" %>
 		    <br><span class="title-error"> Please enter a title! </span><br><br>
 		
@@ -23,26 +22,16 @@
           <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
         </span>
  
-        <%= f.submit "Post", class: "post", id: "post-submit"%>
+        <%= f.submit "Save", class: "post", id: "post-submit"%>
 	      <br>
 	      <span class="submit-error">Please fix errors before posting!</span>
 	    </div>
     <% end %>
 
     <!--script code from https://www.railstutorial.org/book/user_microposts -->
-    <script type="text/javascript">
-      $('#listing_picture').bind('change', function() {
-        size_in_megabytes = this.files[0].size/1024/1024;
-        if (size_in_megabytes > 1) {
-          alert('Maximum file size is 1MB. Please choose a smaller file.');
-        }
-      });
-    </script>
 
-  </div>
-	
-  <%= render partial: 'layouts/categories' %>
-  
+
+  </div>  
 </div>  
 
 
