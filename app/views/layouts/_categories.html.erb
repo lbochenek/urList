@@ -1,11 +1,8 @@
 
 
 <h4>Categories</h4>
+
 <ul>
-
-<h4 class="categories">Browse Categories</h4><br>
-<ul class="categories">
-
   <% @types.each do |type| %>
 		<%= link_to type.category, type, remote: true %>
   <% end %>

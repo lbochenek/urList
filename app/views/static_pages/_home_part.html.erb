@@ -1,44 +1,33 @@
 <div id="application">	
-<div id="home">  
-  <h1 class="logo">urList</h1>
-  <% if logged_out? %>
-    <div id="home_logged_out">
-      <%= link_to "Make an account today!", signup_path, class: "signup", remote: true %>
-    </div>
-	<% else %> 
-    <div id="createForm">  
-	    <h3 class="page-head">Make a new listing!</h3>
-	    <%= render partial: 'shared/listing_form' %>
-	  </div>
-    
+  <div id="home">  
+    <h1 class="logo">urList</h1>
+    <% if logged_out? %>
+      <div id="home_logged_out">
+        <%= link_to "Make an account today!", signup_path, class: "signup", remote: true %>
+      </div>
+	  <% else %> 
+      <div id="createForm">  
+	      <h3 class="page-head">Make a new listing!</h3>
+	      <%= render partial: 'shared/listing_form' %>
+	    </div>
 
-    <!-- <div id="categories">
-      <%= render partial: 'layouts/categories' %>
-    </div>   -->
-  
-
-	<h3 class="page-head">Listings</h3>
+	    <h3 class="page-head">Listings</h3>
 	
-	  <div class="categories"><%= render partial: 'layouts/categories' %></div>
-		
-		
+	    <div class="categories"><%= render partial: 'layouts/categories' %></div>		
 
 			<!-- SEARCH BAR HERE-->
 			<form id="live-search" action="" class="search-bar" method="post">
-			    <fieldset>
-			        <input type="text" class="text-input" id="filter" value="" placeholder="Type to search listings..." />
+			  <fieldset>
+			    <input type="text" class="text-input" id="filter" value="" placeholder="Type to search listings..." />
 			        <span id="filter-count"></span>
-			    </fieldset>
+			  </fieldset>
 					<input type="reset" value="Clear Search" id="clear">
-				</form>
-				<span class="no-results">Sorry, no listings match your search term.</span>
-
+		  </form>
+			<span class="no-results">Sorry, no listings match your search term.</span>				
 				
-				
-			<div class="listings-list">
-						
-	 	  <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
-	  </div>
-  <% end %>
-</div> 
+			<div class="listings-list">						
+	 	    <%= render partial: 'shared/feed', locals: { feed_items: @feed_items } %>
+	    </div>
+    <% end %>
+  </div> 
 </div> 
