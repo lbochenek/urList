@@ -9,13 +9,13 @@ class SoldsController < ApplicationController
     if @soldlisting.save
       @listing.destroy
       respond_to do |format|
-        # format.html { redirect_to root_url }
+        format.html { redirect_to root_url }
         format.js
       end
      # redirect_to root_url
     else
       respond_to do |format|
-        # format.html { render 'static_pages/home' }
+        format.html { render 'static_pages/home' }
         format.js { render template: "solds/sold_listing_errors.js.erb" }
       end
       # render 'static_pages/home'
@@ -25,7 +25,7 @@ class SoldsController < ApplicationController
   def show
     @sold = Sold.find(params[:id])
     respond_to do |format|
-      # format.html
+      format.html
       format.js
     end
   end    
