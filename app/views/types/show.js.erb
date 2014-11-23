@@ -1,4 +1,4 @@
 $(document).ready(function() {
-  $("#categories").replaceWith("<%= j(render(partial: 'layouts/categories')) %>");
   $("#application").replaceWith("<%= escape_javascript(render(partial: 'types/show_types', locals: { type: @type, listings: @listings })) %>");
+  $("#application").prepend("<%= j(render(partial: 'layouts/categories')) %>");
 });   
