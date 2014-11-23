@@ -32,18 +32,20 @@ class ListingsController < ApplicationController
       if(has_picture)
         if(has_only_picture)
           respond_to do |format|
+            format.html { render 'static_pages/home' }
             format.js { render js: '$("#create-listing_error").empty();
                                 $("#create-listing_error").append("Invalid image type; allowed types: jpg, jpeg, gif, png");' }
           end
         else
           @listing.errors.delete(:picture)
           respond_to do |format|
+            format.html { render 'static_pages/home' }
             format.js { render template: "listings/create_picture_errors.js.erb", locals: {listing: @listing} }
           end
         end
       else
         respond_to do |format|
-          format.html { render 'edit' }
+          format.html { render 'static_pages/home' }
           format.js { render template: "listings/create_errors.js.erb", locals: {listing: @listing} }
         end
       end  
@@ -103,7 +105,6 @@ class ListingsController < ApplicationController
         if(has_only_picture)
           respond_to do |format|
             format.html { render 'edit' }
-            # format.js { render template: "listings/update_errors.js.erb", locals: {listing: @listing} }
             format.js { render js: '$("#edit-listing_errors").empty();
                                 $("#edit-listing_errors").append("Invalid image type; allowed types: jpg, jpeg, gif, png");' }
           end

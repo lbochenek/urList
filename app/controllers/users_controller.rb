@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.paginate(page: params[:page])
     respond_to do |format|
-      # format.html
+      format.html
       format.js
     end 
 
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @listings = @user.listings.all
     @solds = @user.solds.all
     respond_to do |format|
-      # format.html
+      format.html
       format.js
     end 
   end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     respond_to do |format|
-      # format.html { redirect_to @user }
+      format.html { redirect_to @user }
       format.js
     end  
   end
@@ -41,14 +41,14 @@ class UsersController < ApplicationController
         log_in @user
         # flash[:success] = "Welcome!"
         respond_to do |format|
-          # format.html { redirect_to @user }
+          format.html { redirect_to @user }
           format.js
         end  
         # redirect_to @user
       else
         # render 'new'
         respond_to do |format|
-          # format.html { render 'new' }
+          format.html { render 'new' }
           format.js { render template: "users/create_errors.js.erb" }
         end
       end
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     respond_to do |format|
-      # format.html
+      format.html
       format.js
     end  
   end
@@ -70,14 +70,14 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       # flash[:success] = "Profile updated"
       respond_to do |format|
-        # format.html { redirect_to @user }
+        format.html { redirect_to @user }
         format.js
       end  
       # redirect_to @user
     else
       # render 'edit'
       respond_to do |format|
-        # format.html { render 'edit' }
+        format.html { render 'edit' }
         format.js { render template: "users/update_errors.js.erb" }
       end
     end
