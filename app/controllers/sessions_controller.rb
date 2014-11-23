@@ -12,14 +12,10 @@ class SessionsController < ApplicationController
 
     if(user)
       @user = user
-      @listings = user.listings.paginate(page: params[:page])
+      @listings = user.listings.all
+      @solds = user.solds.all
     end
-
-    @user = user
-    @listings = user.listings.all
-    @solds = user.solds.all
-    # @listings = user.listings.paginate(page: params[:page])
-
+    
     if user && user.authenticate(params[:session][:password])
       log_in user
       remember user
@@ -34,7 +30,8 @@ class SessionsController < ApplicationController
       # render 'new'
       respond_to do |format|
         format.html { render 'new' }
-        format.js { render js: '$("#login_error").append("Invalid email/password combination");' }
+        format.js { render js: '$("#login_error").empty();
+          $("#login_error").append("Invalid email/password combination");' }
       end
     end
   end
