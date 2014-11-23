@@ -10,12 +10,13 @@
       Posted <%= time_ago_in_words(listing.created_at) %> ago by <%= link_to listing.user.fName, listing.user, remote: true %>
 		  <% if current_user?(listing.user) %>
 		      <%= link_to "Edit", edit_listing_path(listing.id), remote: true%>
-          <%= link_to "delete my post", listing, remote: true, 
+          <%= link_to "Delete", listing, remote: true, 
                                                  class: "inline-delete", 
                                                  method: :delete,
 		                                             data: { confirm: "Are you sure?" } %>
           <%= button_to "This listing is sold", listing,
                                                 remote: true,
+																								class: "listing-sold",
                                                 action:"sold_listing",
                                                 id: listing.id,
                                                 controller:"solds",

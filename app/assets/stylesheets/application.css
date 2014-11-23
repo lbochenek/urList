@@ -158,14 +158,14 @@ fieldset {
   text-align: center;
   font-family: 'Exo 2';
   color: #00467f;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 .logo {
   text-align: center;
   font-family: 'Exo 2';
   color: #00467f;
-  font-size: 5em;
+  font-size: 4em;
 }
 
 .welcome {
@@ -380,6 +380,10 @@ li.listing {
 
 #listing_title, #listing_price, #listing-content {
 	min-width: 300px;
+}
+
+.listing-sold {
+	width: 200px;
 }
 
 
