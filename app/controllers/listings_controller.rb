@@ -46,12 +46,8 @@ class ListingsController < ApplicationController
           format.html { render 'edit' }
           format.js { render template: "listings/create_errors.js.erb", locals: {listing: @listing} }
         end
+      end  
 
-      respond_to do |format|
-        format.html { render 'static_pages/home' }
-        format.js { render template: "listings/create_errors.js.erb" }
-        picture-styling
-      end
       # respond_to do |format|
       #   # format.html { render 'static_pages/home' }
       #   format.js { render template: "listings/create_errors.js.erb" }
@@ -104,8 +100,6 @@ class ListingsController < ApplicationController
       end 
 
       if(has_picture) 
-        picture-styling
-      # if(@listing.errors.include?(:picture))
         if(has_only_picture)
           respond_to do |format|
             format.html { render 'edit' }
@@ -132,13 +126,7 @@ class ListingsController < ApplicationController
       #   format.js { render template: "listings/update_errors.js.erb", locals: {listing: @listing} }
       # end
     end
-  end
-  
-  def remove_pic
-    @listing = Listing.find(params[:id])
-    user.remove_picture!
-    @user.save
-  end  
+  end 
 
     private
 
@@ -151,5 +139,4 @@ class ListingsController < ApplicationController
         redirect_to root_url if @listing.nil?
       end
 
-end
 end
