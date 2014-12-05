@@ -1,4 +1,5 @@
 module ListingsHelper
+  #This method was written by our friend Chase Conklin
   def price(listing)
     if listing.price.nil?
       "???"

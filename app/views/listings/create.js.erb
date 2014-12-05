@@ -3,7 +3,6 @@
 // also used https://github.com/camsong/AjaxCRUD/blob/master/app/views/entries/create.js.erb
 
 $(document).ready(function() {
-  // $("#list").prepend("<%= j(render @listing) %>");
 	var post = $("<%= j(render @listing) %>");
 		$("#list").prepend(post);
 		$( post ).addClass('green-background');
@@ -12,5 +11,4 @@ $(document).ready(function() {
 		     }, 2000);
   $("#new_listing")[0].reset();
   $("#create-listing_error").replaceWith("<div id='create-listing_error'></div>");
-  console.log("image uploaded?");
 });

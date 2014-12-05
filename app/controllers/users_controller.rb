@@ -8,9 +8,6 @@ class UsersController < ApplicationController
       format.html
       format.js
     end 
-
-    @users = User.all
-
   end  
     
   def show

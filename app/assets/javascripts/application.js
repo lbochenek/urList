@@ -223,7 +223,7 @@ $(document).ready(function () {
 	            }
 						
 	        });
-			var listCount = count;
+          
 			console.log(count);
 			
 			if (count == 0){

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :get_types
+  before_action :get_types
   
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.  
