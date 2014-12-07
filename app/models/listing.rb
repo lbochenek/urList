@@ -1,5 +1,4 @@
 class Listing < ActiveRecord::Base
-  # has_many :listings
   belongs_to :user
   belongs_to :type
   default_scope -> { order('created_at DESC') }

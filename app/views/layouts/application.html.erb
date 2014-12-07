@@ -11,8 +11,6 @@
     <%= render partial: 'layouts/shim' %>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		
-		
   </head>
   <body>		
     <%= render partial: 'layouts/header' %>
@@ -24,7 +22,9 @@
       
         <%= yield %>
     </div>
-        <%= debug(params) if Rails.env.test? %>
+    
+    <%= debug(params) if Rails.env.test? %>
+    
   </body>
 </html>
 

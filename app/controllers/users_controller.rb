@@ -29,25 +29,24 @@ class UsersController < ApplicationController
   end
   
   def create
-      @user = User.new(user_params)
-      @listings =  @user.listings.all
-      @solds = @user.solds.all
-      # @listings =  @user.listings.paginate(page: params[:page])
-      if @user.save
-        log_in @user
-        # flash[:success] = "Welcome!"
-        respond_to do |format|
-          format.html { redirect_to @user }
-          format.js
-        end  
-        # redirect_to @user
-      else
-        # render 'new'
-        respond_to do |format|
-          format.html { render 'new' }
-          format.js { render template: "users/create_errors.js.erb" }
-        end
+    @user = User.new(user_params)
+    @listings =  @user.listings.all
+    @solds = @user.solds.all
+    if @user.save
+      log_in @user
+      # flash[:success] = "Welcome!"
+      respond_to do |format|
+        format.html { redirect_to @user }
+        format.js
+      end  
+      # redirect_to @user
+    else
+      # render 'new'
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js { render template: "users/create_errors.js.erb" }
       end
+    end
   end
   
   def edit
@@ -62,7 +61,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @listings =  @user.listings.all
     @solds = @user.solds.all
-    # @listings =  @user.listings.paginate(page: params[:page])
     if @user.update_attributes(user_params)
       # flash[:success] = "Profile updated"
       respond_to do |format|
